@@ -1,0 +1,19 @@
+{
+	"$id": "https://cellocad.org/v2/parameter.schema.json",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "parameter",
+	"description": "A numerical parameter.",
+	"type": "object",
+	"properties": {
+		"name": {
+			"type": "string",
+			"description": "The parameter name."
+		},
+		"value": {
+			"type": "number",
+			"description": "The parameter value."
+		}
+		
+	},
+	"required": ["name", "value"]
+}

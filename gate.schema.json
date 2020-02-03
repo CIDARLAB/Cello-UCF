@@ -1,0 +1,38 @@
+{
+	"$id": "https://cellocad.org/v2/gate.schema.json",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "gate",
+	"description": "A representation of a transcriptional gate.",
+	"type": "object",
+	"properties": {
+		"name": {
+			"type": "string",
+			"description": "The name of the gate."
+		},
+		"regulator": {
+			"type": "string",
+			"description": "The regulator of the gate."
+		},
+		"group": {
+			"type": "string",
+			"description": "This attribute is used to group variants of gates that cannot be used together in a circuit design. For example, all RBS variants of a certain repressor (B1_BM3R1, B2_BM3R1, B3_BM3R1) would belong to the same group (BM3R1), since a repressor is can only be used once per circuit assignment. Furthermore, if known cross-talking interactions between different repressors are known, these could also be put into the same group. Similarly, if homologous recombination is a concern and two gates have the same large part, then they can be placed in the same group."
+		},
+		"type": {
+			"type": "string",
+			"enum": ["NOT", "NOR", "AND", "NAND", "OR", "XOR", "XNOR"]
+		},
+		"system": {
+			"description": "The family of homologs to which the gate belongs.",
+			"type": "string"
+		},
+		"color": {
+			"description": "A color representative of the gate.",
+			"type": "string",
+			"pattern": "^[0-9A-Fa-f]{6}$"
+		},
+		"responseFunction": {
+			"$ref": "#/definitions/responseFunction"
+		}
+	},
+	"required": ["name", "regulator", "group", "type", "system"]
+}

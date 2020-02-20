@@ -1,9 +1,9 @@
-## Python class
+## Generate a Python class
 
 	pip install json-schema-to-class
 	json-schema-to-class gate.schema.json
 	
-## Java
+## Generate a Java class
 
 	brew install jsonschema2pojo
 	

@@ -1,0 +1,51 @@
+{
+	"$id": "function.schema.json",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "gateStructure",
+	"description": "A representation of a function",
+	"type": "object",
+	"properties": {
+		"collection": {
+			"constant": "functions"
+		},
+		"name": {
+			"type": "string",
+			"description": "The name of the gate."
+		},
+		"equation": {
+			"description": "The name of the gate.",
+			"type": "string"
+		},
+		"variables": {
+			"description": "Independent variables of the equation.",
+			"type": "array",
+			"items": {
+				"$ref": "variable.schema.json"
+			}
+		},
+		"parameters": {
+			"description": "Parameters used in the equation.",
+			"type": "array",
+			"items": {
+				"$ref": "parameter.schema.json"
+			}
+		}
+	},
+	"oneOf": [
+		{
+			"required": [
+				"collection",
+				"name",
+				"equation"
+			]
+		},
+		{
+			"required": [
+				"collection",
+				"name",
+				"table"
+			]
+		}
+	],
+	"additionalProperties": false
+}

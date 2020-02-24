@@ -1,0 +1,61 @@
+{
+	"$id": "structure.schema.json",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "structure",
+	"description": "A representation of a gate structure.",
+	"type": "object",
+	"properties": {
+		"collection": {
+			"constant": "structures"
+		},
+		"name": {
+			"description": "The name of the gate structure.",
+			"type": "string"
+		},
+		"inputs": {
+			"description": "The inputs associated with the gate structure.",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"part_type": {
+						"type": "string"
+					}
+				}
+			}
+		},
+		"outputs": {
+			"description": "The outputs associated with the gate structure.",
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+		"devices": {
+			"description": "The devices registered with the gate model.",
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"components": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					}
+				}
+			}
+		}
+	},
+	"required": [
+		"collection",
+		"name"
+	],
+	"additionalProperties": false
+}

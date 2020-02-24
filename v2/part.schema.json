@@ -1,17 +1,20 @@
 {
-	"$id": "https://cellocad.org/v2/part.schema.json",
+	"$id": "part.schema.json",
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"title": "part",
 	"description": "A representation of a genetic component.",
 	"type": "object",
 	"properties": {
+		"collection": {
+			"constant": "parts"
+		},
 		"name": {
-			"type": "string",
-			"description": "The name of the part."
+			"description": "The name of the part.",
+			"type": "string"
 		},
 		"type": {
 			"type": "string",
-			"enum": ["promoter", "cds", "ribozyme", "rbs", "terminator", "cassette"]
+			"enum": ["promoter", "cds", "ribozyme", "rbs", "terminator", "cassette", "scar"]
 		},
 		"dnasequence": {
 			"description": "The DNA sequence of the part.",
@@ -24,5 +27,10 @@
 			"format": "uri"
 		}
 	},
-	"required": ["name", "type", "dnasequence"]
+	"required": [
+		"collection",
+		"name",
+		"type",
+		"dnasequence"
+	]
 }

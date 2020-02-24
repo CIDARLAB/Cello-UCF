@@ -1,23 +1,21 @@
 {
-	"$id": "https://cellocad.org/v2/variable.schema.json",
+	"$id": "variable.schema.json",
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"title": "variable",
-	"description": "A representation of a free variable in a gate.",
+	"description": "A representation of a free variable in a function.",
 	"type": "object",
 	"properties": {
 		"name": {
+			"description": "The variable name.",
+			"type": "string"
+		},
+		"map": {
+			"description": "A reference to a numerical object.",
 			"type": "string",
-			"description": "The variable name."
-		},
-		"offThreshold": {
-			"type": "number",
-			"description": "The off threshold."
-		},
-		"onThreshold": {
-			"type": "number",
-			"description": "The on threshold."
+			"pattern": "^#/(/[A-Za-z0-9_]+)+$"
 		}
-		
 	},
-	"required": ["name", "offThreshold", "onThreshold"]
+	"required": [
+		"name"
+	]
 }

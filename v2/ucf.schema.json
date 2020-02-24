@@ -1,0 +1,16 @@
+{
+	"$id": "ucf.schema.json",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "ucf",
+	"description": "A UCF object.",
+	"type": "array",
+	"items": {
+		"anyOf": [
+			{ "$ref": "file:gate.schema.json" },
+			{ "$ref": "file:model.schema.json" },
+			{ "$ref": "file:structure.schema.json" },
+			{ "$ref": "file:function.schema.json" },
+			{ "$ref": "file:part.schema.json" }
+		]
+	}
+}

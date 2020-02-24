@@ -1,0 +1,76 @@
+{
+	"$id": "genetic_locations.schema.json",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "genetic_locations",
+	"description": "A `genetic_locations` object in the UCF document.",
+	"type": "object",
+	"definitions": {
+		"type": {
+			"type": "string",
+			"enum": ["file"]
+		}
+	},
+	"properties": {
+		"collection": {
+			"constant": "genetic_locations"
+		},
+		"locations": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"symbol": {
+						"type": "string"
+					},
+					"locus": {
+						"type": "object",
+						"properties": {
+							"start": {
+								"type": "number"
+							},
+							"end": {
+								"type": "number"
+							}
+						}
+					},
+					"sequence": {
+						"type": "object",
+						"properties": {
+							"type": {
+								"$ref": "#/definitions/type"
+							},
+							"ref": {
+								"type": "string"
+							}
+						}
+					}
+				}
+			}
+		},
+		"sequences": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"type": {
+						"$ref": "#/definitions/type"
+					},
+					"data": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					}
+				}
+			}
+		}
+	},
+	"required": [
+		"collection",
+		"locations"
+	],
+	"additionalProperties": false
+}

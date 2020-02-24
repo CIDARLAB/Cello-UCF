@@ -1,0 +1,31 @@
+{
+	"$id": "measurement_std.schema.json",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "measurement_std",
+	"description": "A `measurement_std` object in the UCF document.",
+	"type": "object",
+	"properties": {
+		"collection": {
+			"constant": "measurement_std"
+		},
+		"signal_carrier_units": {
+			"type": "string"
+		},
+		"normalization_instructions": {
+			"type": "string"
+		},
+		"plasmid_description": {
+			"type": "string"
+		},
+		"plasmid_sequence": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		}
+	},
+	"required": [
+		"collection"
+	],
+	"additionalProperties": false
+}

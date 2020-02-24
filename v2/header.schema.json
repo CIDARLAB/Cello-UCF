@@ -1,0 +1,46 @@
+{
+	"$id": "header.schema.json",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "header",
+	"description": "A `header` object in the UCF document.",
+	"type": "object",
+	"properties": {
+		"collection": {
+			"constant": "header"
+		},
+		"description": {
+			"type": "string"
+		},
+		"version": {
+			"type": "string"
+		},
+		"date": {
+			"type": "string"
+		},
+		"author": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+		"organism": {
+			"type": "string"
+		},
+		"genome": {
+			"type": "string"
+		},
+		"media": {
+			"type": "string"
+		},
+		"temperature": {
+			"type": "string"
+		},
+		"growth": {
+			"type": "string"
+		}
+	},
+	"required": [
+		"collection"
+	],
+	"additionalProperties": false
+}

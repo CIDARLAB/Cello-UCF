@@ -1,0 +1,32 @@
+{
+	"$id": "rules.schema.json",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "rules",
+	"description": "A `rules` object in the UCF document.",
+	"type": "object",
+	"properties": {
+		"function": {
+			"type": "string",
+			"enum": ["AND", "OR"]
+		},
+		"rules": {
+			"type": "array",
+			"items": {
+				"oneOf": [
+					{
+						"type": "object",
+						"$ref": "rules.schema.json"
+					},
+					{
+						"type": "string"
+					}	
+				]
+			}
+		}
+	},
+	"required": [
+		"function",
+		"rules"
+	],
+	"additionalProperties": false
+}

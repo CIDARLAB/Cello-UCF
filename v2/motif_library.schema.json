@@ -1,0 +1,37 @@
+{
+	"$id": "motif_library.schema.json",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "motif_library",
+	"description": "A `motif_library` object in the UCF document.",
+	"type": "object",
+	"properties": {
+		"collection": {
+			"constant": "motif_library"
+		},
+		"inputs": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+		"netlist": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
+		"outputs": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		}
+	},
+	"required": [
+		"collection",
+		"inputs",
+		"netlist",
+		"outputs"
+	],
+	"additionalProperties": false
+}

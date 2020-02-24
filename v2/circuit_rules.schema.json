@@ -1,0 +1,21 @@
+{
+	"$id": "circuit_rules.schema.json",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "circuit_rules",
+	"description": "A `circuit_rules` object in the UCF document.",
+	"type": "object",
+	"properties": {
+		"collection": {
+			"constant": "circuit_rules"
+		},
+		"rules": {
+			"type": "object",
+			"$ref": "rules.schema.json"
+		}
+	},
+	"required": [
+		"collection",
+		"rules"
+	],
+	"additionalProperties": false
+}

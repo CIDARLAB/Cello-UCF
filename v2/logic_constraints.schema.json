@@ -1,0 +1,34 @@
+{
+	"$id": "logic_constraints.schema.json",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "logic_constraints",
+	"description": "A `logic_constraints` object in the UCF document.",
+	"type": "object",
+	"properties": {
+		"collection": {
+			"constant": "logic_constraints"
+		},
+		"available_gates": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"type": {
+						"type": "string"
+					},
+					"max_instances": {
+						"oneOf": [
+							{ "type": "number" },
+							{ "type": "boolean" }
+						]
+					}
+				}
+			}
+		}
+	},
+	"required": [
+		"collection",
+		"available_gates"
+	],
+	"additionalProperties": false
+}

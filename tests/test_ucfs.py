@@ -19,9 +19,9 @@ class TestUCFs(unittest.TestCase, metaclass=TestFileMeta):
             yield (basename(f), f)
 
     def check_file(self, f):
-        with open("schema/v2/ucf.schema.json") as schema_file:
+        with open("schemas/v2/ucf.schema.json") as schema_file:
             schema = json.load(schema_file)
-        resolver = jsonschema.RefResolver("file://" + getcwd() + "/schema/v2/", "")
+        resolver = jsonschema.RefResolver("file://" + getcwd() + "/schemas/v2/", "")
         validator = jsonschema.Draft7Validator(schema, resolver=resolver)
         with open(f) as ucf_file:
             ucf = json.load(ucf_file)

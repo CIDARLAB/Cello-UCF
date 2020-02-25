@@ -13,7 +13,7 @@ __license__ = 'GPL3'
 class TestSchemas(unittest.TestCase, metaclass=TestFileMeta):
 
     def get_test_args():
-        files = glob("schema/**/*.schema.json", recursive=True)
+        files = glob("schemas/**/*.schema.json", recursive=True)
         for f in files:
             yield (basename(f), f)
 

@@ -19,9 +19,9 @@ class TestOutputDeviceFiles(unittest.TestCase, metaclass=TestFileMeta):
             yield (basename(f), f)
 
     def check_file(self, f):
-        with open("schema/v2/output_device_file.schema.json") as schema_file:
+        with open("schemas/v2/output_device_file.schema.json") as schema_file:
             schema = json.load(schema_file)
-        resolver = jsonschema.RefResolver("file://" + getcwd() + "/schema/v2/", "")
+        resolver = jsonschema.RefResolver("file://" + getcwd() + "/schemas/v2/", "")
         validator = jsonschema.Draft7Validator(schema, resolver=resolver)
         with open(f) as odf_file:
             odf = json.load(odf_file)

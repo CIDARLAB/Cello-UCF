@@ -1,8 +1,8 @@
 {
-	"$id": "input_sensor.schema.json",
+	"$id": "input_sensors.schema.json",
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"title": "input_sensor",
-	"description": "A `input_sensor` object in a UCF document.",
+	"title": "input_sensors",
+	"description": "A `input_sensors` object in a UCF document.",
 	"type": "object",
 	"properties": {
 		"collection": {

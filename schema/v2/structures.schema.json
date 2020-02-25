@@ -1,8 +1,8 @@
 {
-	"$id": "structure.schema.json",
+	"$id": "structures.schema.json",
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"title": "structure",
-	"description": "A representation of a gate structure.",
+	"title": "structures",
+	"description": "A `structures` object in a UCF document.",
 	"type": "object",
 	"properties": {
 		"collection": {

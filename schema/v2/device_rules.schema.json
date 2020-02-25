@@ -2,7 +2,7 @@
 	"$id": "device_rules.schema.json",
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"title": "device_rules",
-	"description": "A `device_rules` object in the UCF document.",
+	"description": "A `device_rules` object in a UCF document.",
 	"type": "object",
 	"properties": {
 		"collection": {

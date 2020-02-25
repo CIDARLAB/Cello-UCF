@@ -6,11 +6,11 @@
 	"type": "array",
 	"items": {
 		"anyOf": [
-			{ "$ref": "file:input_sensor.schema.json" },
-			{ "$ref": "file:model.schema.json" },
-			{ "$ref": "file:structure.schema.json" },
-			{ "$ref": "file:function.schema.json" },
-			{ "$ref": "file:part.schema.json" }
+			{ "$ref": "file:input_sensors.schema.json" },
+			{ "$ref": "file:models.schema.json" },
+			{ "$ref": "file:structures.schema.json" },
+			{ "$ref": "file:functions.schema.json" },
+			{ "$ref": "file:parts.schema.json" }
 		]
 	}
 }

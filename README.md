@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/CIDARLAB/Cello-UCF.svg?branch=develop)](https://travis-ci.org/CIDARLAB/Cello-UCF)
+
 # Cello UCFs
 
 UCFs, input sensor files, and output device files are in `files`.

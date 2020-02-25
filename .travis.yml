@@ -1,0 +1,8 @@
+branches:
+  only:
+    - develop
+    - master
+language: python
+script:
+  - python -m unittest
+

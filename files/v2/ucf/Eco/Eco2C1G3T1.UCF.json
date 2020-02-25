@@ -18,26 +18,49 @@
     {
         "collection": "measurement_std",
         "signal_carrier_units": "RPUG",
-        "normalization_instructions": "The following equation converts the median YFP fluorescence to RPUG.  RPUG = (YFP – YFP0)/(YFPRPUG – YFP0), where YFP is the median fluorescence of the cells of interest, YFP0 is the median autofluorescence, and YFPRPUG is the median fluorescence of the cells containing the measurement standard on the genome landing pad",
+        "normalization_instructions": "The following equation converts the median YFP fluorescence to RPUG.  RPUG = (YFP \u2013 YFP0)/(YFPRPUG \u2013 YFP0), where YFP is the median fluorescence of the cells of interest, YFP0 is the median autofluorescence, and YFPRPUG is the median fluorescence of the cells containing the measurement standard on the genome landing pad",
         "plasmid_description": "Genome integrated RPU standard where YFP fluorescent protein is driven by J23101 promoter and B0034 RBS. RiboJ was used as a ribozyme insulator. A bidirectional terminator DT3 was used to insulate YFP from the genome. The insertion is in the landing pad #1, at the position of 4196314"
     },
     {
         "collection": "genetic_locations",
-        "symbol": "L1",
-        "locus": 4196314,
-        "sequence": "NCBI U00096.3"
-    },
-    {
-        "collection": "genetic_locations",
-        "symbol": "L2",
-        "locus": 4506858,
-        "sequence": "NCBI U00096.3"
-    },
-    {
-        "collection": "genetic_locations",
-        "symbol": "L3",
-        "locus": 3911814,
-        "sequence": "NCBI U00096.3"
+        "locations": [
+            {
+                "symbol": "L1",
+                "description": "Input sensors location",
+                "locus": {
+                    "start": 4196314,
+                    "end": 4196314
+                },
+                "sequence": {
+                    "type": "ncbi",
+                    "ref": "U00096.3"
+                }
+            },
+            {
+                "symbol": "L2",
+                "description": "Logic gates location",
+                "locus": {
+                    "start": 4506858,
+                    "end": 4506858
+                },
+                "sequence": {
+                    "type": "ncbi",
+                    "ref": "U00096.3"
+                }
+            },
+            {
+                "symbol": "L3",
+                "description": "Output devices location",
+                "locus": {
+                    "start": 3911814,
+                    "end": 3911814
+                },
+                "sequence": {
+                    "type": "ncbi",
+                    "ref": "U00096.3"
+                }
+            }
+        ]
     },
     {
         "collection": "logic_constraints",
@@ -9258,68 +9281,97 @@
     },
     {
         "collection": "gates",
+        "name": "P1_PhlF",
+        "system": "TetR",
+        "group": "PhlF",
         "regulator": "PhlF",
-        "group_name": "PhlF",
-        "gate_name": "P1_PhlF",
         "gate_type": "NOR",
-        "system": "TetR",
-        "color_hexcode": "F9A427"
+        "color": "F9A427",
+        "model": "P1_PhlF_model",
+        "structure": "P1_PhlF_structure"
     },
     {
         "collection": "gates",
+        "name": "Q1_QacR",
+        "system": "TetR",
+        "group": "QacR",
         "regulator": "QacR",
-        "group_name": "QacR",
-        "gate_name": "Q1_QacR",
         "gate_type": "NOR",
-        "system": "TetR",
-        "color_hexcode": "66BC46"
+        "color": "66BC46",
+        "model": "Q1_QacR_model",
+        "structure": "Q1_QacR_structure"
     },
     {
         "collection": "gates",
+        "name": "A1_AmtR",
+        "system": "TetR",
+        "group": "AmtR",
         "regulator": "AmtR",
-        "group_name": "AmtR",
-        "gate_name": "A1_AmtR",
         "gate_type": "NOR",
-        "system": "TetR",
-        "color_hexcode": "3BA9E0"
+        "color": "3BA9E0",
+        "model": "A1_AmtR_model",
+        "structure": "A1_AmtR_structure"
     },
     {
         "collection": "gates",
+        "name": "B3_BM3R1",
+        "system": "TetR",
+        "group": "BM3R1",
         "regulator": "BM3R1",
-        "group_name": "BM3R1",
-        "gate_name": "B3_BM3R1",
         "gate_type": "NOR",
-        "system": "TetR",
-        "color_hexcode": "EE2F2B"
+        "color": "EE2F2B",
+        "model": "B3_BM3R1_model",
+        "structure": "B3_BM3R1_structure"
     },
     {
         "collection": "gates",
+        "name": "F2_AmeRs",
+        "system": "TetR",
+        "group": "AmeRs",
         "regulator": "AmeRs",
-        "group_name": "AmeRs",
-        "gate_name": "F2_AmeRs",
         "gate_type": "NOR",
-        "system": "TetR",
-        "color_hexcode": "6FCDE1"
+        "color": "6FCDE1",
+        "model": "F2_AmeRs_model",
+        "structure": "F2_AmeRs_structure"
     },
     {
         "collection": "gates",
-        "regulator": "BetI",
-        "group_name": "BetI",
-        "gate_name": "E1_BetI",
-        "gate_type": "NOR",
+        "name": "E1_BetI",
         "system": "TetR",
-        "color_hexcode": "5455A4"
+        "group": "BetI",
+        "regulator": "BetI",
+        "gate_type": "NOR",
+        "color": "5455A4",
+        "model": "E1_BetI_model",
+        "structure": "E1_BetI_structure"
     },
     {
-        "collection": "gate_structure",
-        "gate_name": "P1_PhlF",
-        "output": "pPhlF",
+        "collection": "structures",
+        "name": "P1_PhlF_structure",
+        "inputs": [
+            {
+                "name": "in1",
+                "part_type": "promoter"
+            },
+            {
+                "name": "in2",
+                "part_type": "promoter"
+            }
+        ],
+        "outputs": [
+            "pPhlF"
+        ],
         "devices": [
             {
                 "name": "P1_PhlF_a",
-                "maps_to_variable": "x",
                 "components": [
-                    "#promoter?",
+                    "#in1",
+                    "P1_PhlF_a_cassette"
+                ]
+            },
+            {
+                "name": "P1_PhlF_a_cassette",
+                "components": [
                     "RiboJ53",
                     "P1",
                     "PhlF",
@@ -9328,9 +9380,14 @@
             },
             {
                 "name": "P1_PhlF_b",
-                "maps_to_variable": "x",
                 "components": [
-                    "#promoter?",
+                    "#in2",
+                    "P1_PhlF_b_cassette"
+                ]
+            },
+            {
+                "name": "P1_PhlF_b_cassette",
+                "components": [
                     "RiboJ53",
                     "P1",
                     "PhlF",
@@ -9340,15 +9397,32 @@
         ]
     },
     {
-        "collection": "gate_structure",
-        "gate_name": "Q1_QacR",
-        "output": "pQacR",
+        "collection": "structures",
+        "name": "Q1_QacR_structure",
+        "inputs": [
+            {
+                "name": "in1",
+                "part_type": "promoter"
+            },
+            {
+                "name": "in2",
+                "part_type": "promoter"
+            }
+        ],
+        "outputs": [
+            "pQacR"
+        ],
         "devices": [
             {
                 "name": "Q1_QacR_a",
-                "maps_to_variable": "x",
                 "components": [
-                    "#promoter?",
+                    "#in1",
+                    "Q1_QacR_a_cassette"
+                ]
+            },
+            {
+                "name": "Q1_QacR_a_cassette",
+                "components": [
                     "RiboJ60",
                     "Q1",
                     "QacR",
@@ -9357,9 +9431,14 @@
             },
             {
                 "name": "Q1_QacR_b",
-                "maps_to_variable": "x",
                 "components": [
-                    "#promoter?",
+                    "#in2",
+                    "Q1_QacR_b_cassette"
+                ]
+            },
+            {
+                "name": "Q1_QacR_b_cassette",
+                "components": [
                     "RiboJ60",
                     "Q1",
                     "QacR",
@@ -9369,15 +9448,32 @@
         ]
     },
     {
-        "collection": "gate_structure",
-        "gate_name": "A1_AmtR",
-        "output": "pAmtR",
+        "collection": "structures",
+        "name": "A1_AmtR_structure",
+        "inputs": [
+            {
+                "name": "in1",
+                "part_type": "promoter"
+            },
+            {
+                "name": "in2",
+                "part_type": "promoter"
+            }
+        ],
+        "outputs": [
+            "pAmtR"
+        ],
         "devices": [
             {
                 "name": "A1_AmtR_a",
-                "maps_to_variable": "x",
                 "components": [
-                    "#promoter?",
+                    "#in1",
+                    "A1_AmtR_a_cassette"
+                ]
+            },
+            {
+                "name": "A1_AmtR_a_cassette",
+                "components": [
                     "BydvJ",
                     "A1",
                     "AmtR",
@@ -9386,9 +9482,14 @@
             },
             {
                 "name": "A1_AmtR_b",
-                "maps_to_variable": "x",
                 "components": [
-                    "#promoter?",
+                    "#in2",
+                    "A1_AmtR_b_cassette"
+                ]
+            },
+            {
+                "name": "A1_AmtR_b_cassette",
+                "components": [
                     "BydvJ",
                     "A1",
                     "AmtR",
@@ -9398,15 +9499,32 @@
         ]
     },
     {
-        "collection": "gate_structure",
-        "gate_name": "B3_BM3R1",
-        "output": "pBM3R1",
+        "collection": "structures",
+        "name": "B3_BM3R1_structure",
+        "inputs": [
+            {
+                "name": "in1",
+                "part_type": "promoter"
+            },
+            {
+                "name": "in2",
+                "part_type": "promoter"
+            }
+        ],
+        "outputs": [
+            "pBM3R1"
+        ],
         "devices": [
             {
                 "name": "B3_BM3R1_a",
-                "maps_to_variable": "x",
                 "components": [
-                    "#promoter?",
+                    "#in1",
+                    "B3_BM3R1_a_cassette"
+                ]
+            },
+            {
+                "name": "B3_BM3R1_a_cassette",
+                "components": [
                     "SarJ",
                     "B3",
                     "BM3R1",
@@ -9415,9 +9533,14 @@
             },
             {
                 "name": "B3_BM3R1_b",
-                "maps_to_variable": "x",
                 "components": [
-                    "#promoter?",
+                    "#in2",
+                    "B3_BM3R1_b_cassette"
+                ]
+            },
+            {
+                "name": "B3_BM3R1_b_cassette",
+                "components": [
                     "SarJ",
                     "B3",
                     "BM3R1",
@@ -9427,15 +9550,32 @@
         ]
     },
     {
-        "collection": "gate_structure",
-        "gate_name": "F2_AmeRs",
-        "output": "pAmeR",
+        "collection": "structures",
+        "name": "F2_AmeRs_structure",
+        "inputs": [
+            {
+                "name": "in1",
+                "part_type": "promoter"
+            },
+            {
+                "name": "in2",
+                "part_type": "promoter"
+            }
+        ],
+        "outputs": [
+            "pAmeR"
+        ],
         "devices": [
             {
                 "name": "F2_AmeRs_a",
-                "maps_to_variable": "x",
                 "components": [
-                    "#promoter?",
+                    "#in1",
+                    "F2_AmeRs_a_cassette"
+                ]
+            },
+            {
+                "name": "F2_AmeRs_a_cassette",
+                "components": [
                     "RiboJ54",
                     "F2",
                     "AmeRs",
@@ -9444,9 +9584,14 @@
             },
             {
                 "name": "F2_AmeRs_b",
-                "maps_to_variable": "x",
                 "components": [
-                    "#promoter?",
+                    "#in2",
+                    "F2_AmeRs_b_cassette"
+                ]
+            },
+            {
+                "name": "F2_AmeRs_b_cassette",
+                "components": [
                     "RiboJ54",
                     "F2",
                     "AmeRs",
@@ -9456,15 +9601,32 @@
         ]
     },
     {
-        "collection": "gate_structure",
-        "gate_name": "E1_BetI",
-        "output": "pBetI",
+        "collection": "structures",
+        "name": "E1_BetI_structure",
+        "inputs": [
+            {
+                "name": "in1",
+                "part_type": "promoter"
+            },
+            {
+                "name": "in2",
+                "part_type": "promoter"
+            }
+        ],
+        "outputs": [
+            "pBetI"
+        ],
         "devices": [
             {
                 "name": "E1_BetI_a",
-                "maps_to_variable": "x",
                 "components": [
-                    "#promoter?",
+                    "#in1",
+                    "E1_BetI_a_cassette"
+                ]
+            },
+            {
+                "name": "E1_BetI_a_cassette",
+                "components": [
                     "RiboJ57",
                     "E1",
                     "BetI",
@@ -9473,9 +9635,14 @@
             },
             {
                 "name": "E1_BetI_b",
-                "maps_to_variable": "x",
                 "components": [
-                    "#promoter?",
+                    "#in2",
+                    "E1_BetI_b_cassette"
+                ]
+            },
+            {
+                "name": "E1_BetI_b_cassette",
+                "components": [
                     "RiboJ57",
                     "E1",
                     "BetI",
@@ -9485,182 +9652,238 @@
         ]
     },
     {
-        "collection": "response_functions",
-        "gate_name": "P1_PhlF",
-        "equation": "ymin+(ymax-ymin)/(1.0+(x/K)^n)",
-        "variables": [
-            {
-                "name": "x",
-                "off_threshold": 0.10416862,
-                "on_threshold": 3.154439167
-            }
-        ],
+        "collection": "models",
+        "name": "P1_PhlF_model",
+        "functions": {
+            "response_function": "Hill_response",
+            "input_composition": "linear_input_composition",
+            "toxicity": "P1_PhlF_toxicity",
+            "cytometry": "P1_PhlF_cytometry"
+        },
         "parameters": [
             {
                 "name": "ymax",
-                "value": 5.120337
+                "value": 5.120337,
+                "description": "Maximal transcription"
             },
             {
                 "name": "ymin",
-                "value": 0.008229
+                "value": 0.008229,
+                "description": "Minimal transcription"
             },
             {
                 "name": "K",
-                "value": 0.15192
+                "value": 0.15192,
+                "description": "Dissociation equilibrium constant"
             },
             {
                 "name": "n",
-                "value": 2.4223
+                "value": 2.4223,
+                "description": "Cooperativety"
             }
         ]
     },
     {
-        "collection": "response_functions",
-        "gate_name": "Q1_QacR",
-        "equation": "ymin+(ymax-ymin)/(1.0+(x/K)^n)",
-        "variables": [
-            {
-                "name": "x",
-                "off_threshold": 0.787223405,
-                "on_threshold": 3.612477347
-            }
-        ],
+        "collection": "models",
+        "name": "Q1_QacR_model",
+        "functions": {
+            "response_function": "Hill_response",
+            "input_composition": "linear_input_composition",
+            "toxicity": "Q1_QacR_toxicity",
+            "cytometry": "Q1_QacR_cytometry"
+        },
         "parameters": [
             {
                 "name": "ymax",
-                "value": 4.518354
+                "value": 4.518354,
+                "description": "Maximal transcription"
             },
             {
                 "name": "ymin",
-                "value": 0.03798
+                "value": 0.03798,
+                "description": "Minimal transcription"
             },
             {
                 "name": "K",
-                "value": 0.970389
+                "value": 0.970389,
+                "description": "Dissociation equilibrium constant"
             },
             {
                 "name": "n",
-                "value": 4.3237
+                "value": 4.3237,
+                "description": "Cooperativety"
             }
         ]
     },
     {
-        "collection": "response_functions",
-        "gate_name": "A1_AmtR",
-        "equation": "ymin+(ymax-ymin)/(1.0+(x/K)^n)",
-        "variables": [
-            {
-                "name": "x",
-                "off_threshold": 0.08685643,
-                "on_threshold": 3.357762407
-            }
-        ],
+        "collection": "models",
+        "name": "A1_AmtR_model",
+        "functions": {
+            "response_function": "Hill_response",
+            "input_composition": "linear_input_composition",
+            "toxicity": "A1_AmtR_toxicity",
+            "cytometry": "A1_AmtR_cytometry"
+        },
         "parameters": [
             {
                 "name": "ymax",
-                "value": 2.078139
+                "value": 2.078139,
+                "description": "Maximal transcription"
             },
             {
                 "name": "ymin",
-                "value": 0.02532
+                "value": 0.02532,
+                "description": "Minimal transcription"
             },
             {
                 "name": "K",
-                "value": 0.147489
+                "value": 0.147489,
+                "description": "Dissociation equilibrium constant"
             },
             {
                 "name": "n",
-                "value": 1.698
+                "value": 1.698,
+                "description": "Cooperativety"
             }
         ]
     },
     {
-        "collection": "response_functions",
-        "gate_name": "B3_BM3R1",
-        "equation": "ymin+(ymax-ymin)/(1.0+(x/K)^n)",
-        "variables": [
-            {
-                "name": "x",
-                "off_threshold": 0.285891924,
-                "on_threshold": 3.065301532
-            }
-        ],
+        "collection": "models",
+        "name": "B3_BM3R1_model",
+        "functions": {
+            "response_function": "Hill_response",
+            "input_composition": "linear_input_composition",
+            "toxicity": "B3_BM3R1_toxicity",
+            "cytometry": "B3_BM3R1_cytometry"
+        },
         "parameters": [
             {
                 "name": "ymax",
-                "value": 0.647559
+                "value": 0.647559,
+                "description": "Maximal transcription"
             },
             {
                 "name": "ymin",
-                "value": 0.00633
+                "value": 0.00633,
+                "description": "Minimal transcription"
             },
             {
                 "name": "K",
-                "value": 0.39879
+                "value": 0.39879,
+                "description": "Dissociation equilibrium constant"
             },
             {
                 "name": "n",
-                "value": 2.7117
+                "value": 2.7117,
+                "description": "Cooperativety"
             }
         ]
     },
     {
-        "collection": "response_functions",
-        "gate_name": "F2_AmeRs",
-        "equation": "ymin+(ymax-ymin)/(1.0+(x/K)^n)",
-        "variables": [
-            {
-                "name": "x",
-                "off_threshold": 0.075658648,
-                "on_threshold": 3.300871735
-            }
-        ],
+        "collection": "models",
+        "name": "F2_AmeRs_model",
+        "functions": {
+            "response_function": "Hill_response",
+            "input_composition": "linear_input_composition",
+            "toxicity": "F2_AmeRs_toxicity",
+            "cytometry": "F2_AmeRs_cytometry"
+        },
         "parameters": [
             {
                 "name": "ymax",
-                "value": 3.694188
+                "value": 3.694188,
+                "description": "Maximal transcription"
             },
             {
                 "name": "ymin",
-                "value": 0.03165
+                "value": 0.03165,
+                "description": "Minimal transcription"
             },
             {
                 "name": "K",
-                "value": 0.127233
+                "value": 0.127233,
+                "description": "Dissociation equilibrium constant"
             },
             {
                 "name": "n",
-                "value": 1.7396
+                "value": 1.7396,
+                "description": "Cooperativety"
             }
         ]
     },
     {
-        "collection": "response_functions",
-        "gate_name": "E1_BetI",
-        "equation": "ymin+(ymax-ymin)/(1.0+(x/K)^n)",
+        "collection": "models",
+        "name": "E1_BetI_model",
+        "functions": {
+            "response_function": "Hill_response",
+            "input_composition": "linear_input_composition",
+            "toxicity": "E1_BetI_toxicity",
+            "cytometry": "E1_BetI_cytometry"
+        },
+        "parameters": [
+            {
+                "name": "ymax",
+                "value": 2.249049,
+                "description": "Maximal transcription"
+            },
+            {
+                "name": "ymin",
+                "value": 0.2532,
+                "description": "Minimal transcription"
+            },
+            {
+                "name": "K",
+                "value": 1.250808,
+                "description": "Dissociation equilibrium constant"
+            },
+            {
+                "name": "n",
+                "value": 3.776,
+                "description": "Cooperativety"
+            }
+        ]
+    },
+    {
+        "collection": "functions",
+        "name": "Hill_response",
+        "equation": "ymin + (ymax - ymin) / (1.0 + (x / K)^n)",
         "variables": [
             {
                 "name": "x",
-                "off_threshold": 1.026906304,
-                "on_threshold": 2.716761686
+                "map": "#//model/functions/input_composition"
             }
         ],
         "parameters": [
             {
                 "name": "ymax",
-                "value": 2.249049
+                "map": "#//model/parameters/ymax"
             },
             {
                 "name": "ymin",
-                "value": 0.2532
+                "map": "#//model/parameters/ymin"
             },
             {
                 "name": "K",
-                "value": 1.250808
+                "map": "#//model/parameters/K"
             },
             {
                 "name": "n",
-                "value": 3.776
+                "map": "#//model/parameters/n"
+            }
+        ]
+    },
+    {
+        "collection": "functions",
+        "name": "linear_input_composition",
+        "equation": "x1 + x2",
+        "variables": [
+            {
+                "name": "x1",
+                "map": "#//structure/inputs/in1/model/functions/response_function"
+            },
+            {
+                "name": "x2",
+                "map": "#//structure/inputs/in2/model/functions/response_function"
             }
         ]
     },
@@ -9903,9 +10126,12 @@
     },
     {
         "collection": "device_rules",
-        "rules": [
-            "ALL_FORWARD"
-        ]
+        "rules": {
+			"function": "AND",
+			"rules": [
+				"ALL_FORWARD"
+			]
+        }
     },
     {
         "collection": "parts",
@@ -10286,211 +10512,261 @@
         "dnasequence": "ATAG"
     },
     {
-        "collection": "gate_toxicity",
-        "gate_name": "P1_PhlF",
-        "maps_to_variable": "x",
-        "input": [
-            0.003470869,
-            0.003619792,
-            0.006167181,
-            0.010964592,
-            0.020500597,
-            0.058266866,
-            0.084445484,
-            0.156232759,
-            0.22181028,
-            0.552101855,
-            0.633290345,
-            0.663358821
-        ],
-        "growth": [
-            1.0,
-            1.019398932,
-            0.949246469,
-            0.982507698,
-            1.082857896,
-            0.975264426,
-            1.006678438,
-            0.94667166,
-            0.991173936,
-            0.959621854,
-            0.96842658,
-            0.962932203
-        ]
-    },
-    {
-        "collection": "gate_toxicity",
-        "gate_name": "Q1_QacR",
-        "maps_to_variable": "x",
-        "input": [
-            0.003470869,
-            0.003619792,
-            0.006167181,
-            0.010964592,
-            0.020500597,
-            0.058266866,
-            0.084445484,
-            0.156232759,
-            0.22181028,
-            0.552101855,
-            0.633290345,
-            0.663358821
-        ],
-        "growth": [
-            1.0,
-            1.042171717,
-            0.936520612,
-            1.073061698,
-            0.937871963,
-            1.002600328,
-            0.932998908,
-            1.133838384,
-            1.040574666,
-            1.146812722,
-            1.000675676,
-            1.008606334
-        ]
-    },
-    {
-        "collection": "gate_toxicity",
-        "gate_name": "A1_AmtR",
-        "maps_to_variable": "x",
-        "input": [
-            0.003470869,
-            0.003619792,
-            0.006167181,
-            0.010964592,
-            0.020500597,
-            0.058266866,
-            0.084445484,
-            0.156232759,
-            0.22181028,
-            0.552101855,
-            0.633290345,
-            0.663358821
-        ],
-        "growth": [
-            1.0,
-            1.007883715,
-            0.896680217,
-            0.9927322,
-            0.951010101,
-            1.000203252,
-            0.976675289,
-            0.987681695,
-            1.062983493,
-            1.051823109,
-            0.876779995,
-            0.981405519
-        ]
-    },
-    {
-        "collection": "gate_toxicity",
-        "gate_name": "B3_BM3R1",
-        "maps_to_variable": "x",
-        "input": [
-            0.003470869,
-            0.003619792,
-            0.006167181,
-            0.010964592,
-            0.020500597,
-            0.058266866,
-            0.084445484,
-            0.156232759,
-            0.22181028,
-            0.552101855,
-            0.633290345,
-            0.663358821
-        ],
-        "growth": [
-            1.0,
-            0.996587444,
-            1.123756741,
-            1.188783148,
-            1.174365111,
-            1.082883519,
-            1.122909926,
-            1.140423185,
-            1.148016,
-            1.067566074,
-            1.105581963,
-            1.082777889
-        ]
-    },
-    {
-        "collection": "gate_toxicity",
-        "gate_name": "F2_AmeRs",
-        "maps_to_variable": "x",
-        "input": [
-            0.003470869,
-            0.003619792,
-            0.006167181,
-            0.010964592,
-            0.020500597,
-            0.058266866,
-            0.084445484,
-            0.156232759,
-            0.22181028,
-            0.552101855,
-            0.633290345,
-            0.663358821
-        ],
-        "growth": [
-            1.0,
-            1.030555556,
-            1.126587302,
-            1.037698413,
-            1.072222222,
-            1.031746032,
-            1.107936508,
-            1.037698413,
-            1.161111111,
-            1.048809524,
-            1.137698413,
-            1.121031746
-        ]
-    },
-    {
-        "collection": "gate_toxicity",
-        "gate_name": "E1_BetI",
-        "maps_to_variable": "x",
-        "input": [
-            0.003470869,
-            0.003619792,
-            0.006167181,
-            0.010964592,
-            0.020500597,
-            0.058266866,
-            0.084445484,
-            0.156232759,
-            0.22181028,
-            0.552101855,
-            0.633290345,
-            0.663358821
-        ],
-        "growth": [
-            1.0,
-            0.917743288,
-            0.92817124,
-            0.96300096,
-            1.081047136,
-            0.98879782,
-            1.046253284,
-            1.084288131,
-            1.080995191,
-            0.97042909,
-            0.99125593,
-            1.124954857
-        ]
-    },
-    {
-        "collection": "gate_cytometry",
-        "gate_name": "P1_PhlF",
-        "cytometry_data": [
+        "collection": "functions",
+        "name": "P1_PhlF_toxicity",
+        "variables": [
             {
-                "maps_to_variable": "x",
-                "input": 0.02197060077,
-                "output_bins": [
+                "name": "x",
+                "map": "#//model/functions/input_composition"
+            }
+        ],
+        "table": {
+            "x": [
+                0.003470869,
+                0.003619792,
+                0.006167181,
+                0.010964592,
+                0.020500597,
+                0.058266866,
+                0.084445484,
+                0.156232759,
+                0.22181028,
+                0.552101855,
+                0.633290345,
+                0.663358821
+            ],
+            "output": [
+                1.0,
+                1.019398932,
+                0.949246469,
+                0.982507698,
+                1.082857896,
+                0.975264426,
+                1.006678438,
+                0.94667166,
+                0.991173936,
+                0.959621854,
+                0.96842658,
+                0.962932203
+            ]
+        }
+    },
+    {
+        "collection": "functions",
+        "name": "Q1_QacR_toxicity",
+        "variables": [
+            {
+                "name": "x",
+                "map": "#//model/functions/input_composition"
+            }
+        ],
+        "table": {
+            "x": [
+                0.003470869,
+                0.003619792,
+                0.006167181,
+                0.010964592,
+                0.020500597,
+                0.058266866,
+                0.084445484,
+                0.156232759,
+                0.22181028,
+                0.552101855,
+                0.633290345,
+                0.663358821
+            ],
+            "output": [
+                1.0,
+                1.042171717,
+                0.936520612,
+                1.073061698,
+                0.937871963,
+                1.002600328,
+                0.932998908,
+                1.133838384,
+                1.040574666,
+                1.146812722,
+                1.000675676,
+                1.008606334
+            ]
+        }
+    },
+    {
+        "collection": "functions",
+        "name": "A1_AmtR_toxicity",
+        "variables": [
+            {
+                "name": "x",
+                "map": "#//model/functions/input_composition"
+            }
+        ],
+        "table": {
+            "x": [
+                0.003470869,
+                0.003619792,
+                0.006167181,
+                0.010964592,
+                0.020500597,
+                0.058266866,
+                0.084445484,
+                0.156232759,
+                0.22181028,
+                0.552101855,
+                0.633290345,
+                0.663358821
+            ],
+            "output": [
+                1.0,
+                1.007883715,
+                0.896680217,
+                0.9927322,
+                0.951010101,
+                1.000203252,
+                0.976675289,
+                0.987681695,
+                1.062983493,
+                1.051823109,
+                0.876779995,
+                0.981405519
+            ]
+        }
+    },
+    {
+        "collection": "functions",
+        "name": "B3_BM3R1_toxicity",
+        "variables": [
+            {
+                "name": "x",
+                "map": "#//model/functions/input_composition"
+            }
+        ],
+        "table": {
+            "x": [
+                0.003470869,
+                0.003619792,
+                0.006167181,
+                0.010964592,
+                0.020500597,
+                0.058266866,
+                0.084445484,
+                0.156232759,
+                0.22181028,
+                0.552101855,
+                0.633290345,
+                0.663358821
+            ],
+            "output": [
+                1.0,
+                0.996587444,
+                1.123756741,
+                1.188783148,
+                1.174365111,
+                1.082883519,
+                1.122909926,
+                1.140423185,
+                1.148016,
+                1.067566074,
+                1.105581963,
+                1.082777889
+            ]
+        }
+    },
+    {
+        "collection": "functions",
+        "name": "F2_AmeRs_toxicity",
+        "variables": [
+            {
+                "name": "x",
+                "map": "#//model/functions/input_composition"
+            }
+        ],
+        "table": {
+            "x": [
+                0.003470869,
+                0.003619792,
+                0.006167181,
+                0.010964592,
+                0.020500597,
+                0.058266866,
+                0.084445484,
+                0.156232759,
+                0.22181028,
+                0.552101855,
+                0.633290345,
+                0.663358821
+            ],
+            "output": [
+                1.0,
+                1.030555556,
+                1.126587302,
+                1.037698413,
+                1.072222222,
+                1.031746032,
+                1.107936508,
+                1.037698413,
+                1.161111111,
+                1.048809524,
+                1.137698413,
+                1.121031746
+            ]
+        }
+    },
+    {
+        "collection": "functions",
+        "name": "E1_BetI_toxicity",
+        "variables": [
+            {
+                "name": "x",
+                "map": "#//model/functions/input_composition"
+            }
+        ],
+        "table": {
+            "x": [
+                0.003470869,
+                0.003619792,
+                0.006167181,
+                0.010964592,
+                0.020500597,
+                0.058266866,
+                0.084445484,
+                0.156232759,
+                0.22181028,
+                0.552101855,
+                0.633290345,
+                0.663358821
+            ],
+            "output": [
+                1.0,
+                0.917743288,
+                0.92817124,
+                0.96300096,
+                1.081047136,
+                0.98879782,
+                1.046253284,
+                1.084288131,
+                1.080995191,
+                0.97042909,
+                0.99125593,
+                1.124954857
+            ]
+        }
+    },
+    {
+        "collection": "functions",
+        "name": "P1_PhlF_cytometry",
+        "variables": [
+            {
+                "name": "x",
+                "map": "#//model/functions/input_composition"
+            },
+            {
+                "name": "bin"
+            }
+        ],
+        "table": [
+            {
+                "x": 0.02197060077,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -10742,7 +11018,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -10996,9 +11272,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.02291328336,
-                "output_bins": [
+                "x": 0.02291328336,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -11250,7 +11525,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -11504,9 +11779,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.03903825573,
-                "output_bins": [
+                "x": 0.03903825573,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -11758,7 +12032,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -12012,9 +12286,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.06940586736,
-                "output_bins": [
+                "x": 0.06940586736,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -12266,7 +12539,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -12520,9 +12793,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.12976877901,
-                "output_bins": [
+                "x": 0.12976877901,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -12774,7 +13046,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -13028,9 +13300,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.36882926178000003,
-                "output_bins": [
+                "x": 0.36882926178000003,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -13282,7 +13553,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -13536,9 +13807,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.53453991372,
-                "output_bins": [
+                "x": 0.53453991372,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -13790,7 +14060,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -14044,9 +14314,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.98895336447,
-                "output_bins": [
+                "x": 0.98895336447,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -14298,7 +14567,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -14552,9 +14821,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 1.4040590724,
-                "output_bins": [
+                "x": 1.4040590724,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -14806,7 +15074,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -15060,9 +15328,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 3.49480474215,
-                "output_bins": [
+                "x": 3.49480474215,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -15314,7 +15581,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -15568,9 +15835,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 4.008727883850001,
-                "output_bins": [
+                "x": 4.008727883850001,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -15822,7 +16088,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -16076,9 +16342,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 4.19906133693,
-                "output_bins": [
+                "x": 4.19906133693,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -16330,7 +16595,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -16586,13 +16851,21 @@
         ]
     },
     {
-        "collection": "gate_cytometry",
-        "gate_name": "Q1_QacR",
-        "cytometry_data": [
+        "collection": "functions",
+        "name": "Q1_QacR_cytometry",
+        "variables": [
             {
-                "maps_to_variable": "x",
-                "input": 0.02197060077,
-                "output_bins": [
+                "name": "x",
+                "map": "#//model/functions/input_composition"
+            },
+            {
+                "name": "bin"
+            }
+        ],
+        "table": [
+            {
+                "x": 0.02197060077,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -16844,7 +17117,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -17098,9 +17371,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.02291328336,
-                "output_bins": [
+                "x": 0.02291328336,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -17352,7 +17624,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -17606,9 +17878,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.03903825573,
-                "output_bins": [
+                "x": 0.03903825573,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -17860,7 +18131,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -18114,9 +18385,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.06940586736,
-                "output_bins": [
+                "x": 0.06940586736,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -18368,7 +18638,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -18622,9 +18892,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.12976877901,
-                "output_bins": [
+                "x": 0.12976877901,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -18876,7 +19145,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -19130,9 +19399,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.36882926178000003,
-                "output_bins": [
+                "x": 0.36882926178000003,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -19384,7 +19652,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -19638,9 +19906,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.53453991372,
-                "output_bins": [
+                "x": 0.53453991372,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -19892,7 +20159,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -20146,9 +20413,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.98895336447,
-                "output_bins": [
+                "x": 0.98895336447,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -20400,7 +20666,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -20654,9 +20920,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 1.4040590724,
-                "output_bins": [
+                "x": 1.4040590724,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -20908,7 +21173,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -21162,9 +21427,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 3.49480474215,
-                "output_bins": [
+                "x": 3.49480474215,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -21416,7 +21680,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -21670,9 +21934,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 4.008727883850001,
-                "output_bins": [
+                "x": 4.008727883850001,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -21924,7 +22187,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -22178,9 +22441,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 4.19906133693,
-                "output_bins": [
+                "x": 4.19906133693,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -22432,7 +22694,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -22688,13 +22950,21 @@
         ]
     },
     {
-        "collection": "gate_cytometry",
-        "gate_name": "A1_AmtR",
-        "cytometry_data": [
+        "collection": "functions",
+        "name": "A1_AmtR_cytometry",
+        "variables": [
             {
-                "maps_to_variable": "x",
-                "input": 0.02197060077,
-                "output_bins": [
+                "name": "x",
+                "map": "#//model/functions/input_composition"
+            },
+            {
+                "name": "bin"
+            }
+        ],
+        "table": [
+            {
+                "x": 0.02197060077,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -22946,7 +23216,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -23200,9 +23470,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.02291328336,
-                "output_bins": [
+                "x": 0.02291328336,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -23454,7 +23723,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -23708,9 +23977,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.03903825573,
-                "output_bins": [
+                "x": 0.03903825573,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -23962,7 +24230,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -24216,9 +24484,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.06940586736,
-                "output_bins": [
+                "x": 0.06940586736,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -24470,7 +24737,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -24724,9 +24991,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.12976877901,
-                "output_bins": [
+                "x": 0.12976877901,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -24978,7 +25244,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -25232,9 +25498,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.36882926178000003,
-                "output_bins": [
+                "x": 0.36882926178000003,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -25486,7 +25751,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -25740,9 +26005,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.53453991372,
-                "output_bins": [
+                "x": 0.53453991372,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -25994,7 +26258,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -26248,9 +26512,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.98895336447,
-                "output_bins": [
+                "x": 0.98895336447,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -26502,7 +26765,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -26756,9 +27019,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 1.4040590724,
-                "output_bins": [
+                "x": 1.4040590724,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -27010,7 +27272,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -27264,9 +27526,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 3.49480474215,
-                "output_bins": [
+                "x": 3.49480474215,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -27518,7 +27779,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -27772,9 +28033,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 4.008727883850001,
-                "output_bins": [
+                "x": 4.008727883850001,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -28026,7 +28286,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -28280,9 +28540,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 4.19906133693,
-                "output_bins": [
+                "x": 4.19906133693,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -28534,7 +28793,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.012330118369136344,
@@ -28790,13 +29049,21 @@
         ]
     },
     {
-        "collection": "gate_cytometry",
-        "gate_name": "B3_BM3R1",
-        "cytometry_data": [
+        "collection": "functions",
+        "name": "B3_BM3R1_cytometry",
+        "variables": [
             {
-                "maps_to_variable": "x",
-                "input": 0.02197060077,
-                "output_bins": [
+                "name": "x",
+                "map": "#//model/functions/input_composition"
+            },
+            {
+                "name": "bin"
+            }
+        ],
+        "table": [
+            {
+                "x": 0.02197060077,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -29048,7 +29315,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -29302,9 +29569,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.02291328336,
-                "output_bins": [
+                "x": 0.02291328336,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -29556,7 +29822,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -29810,9 +30076,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.03903825573,
-                "output_bins": [
+                "x": 0.03903825573,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -30064,7 +30329,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -30318,9 +30583,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.06940586736,
-                "output_bins": [
+                "x": 0.06940586736,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -30572,7 +30836,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -30826,9 +31090,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.12976877901,
-                "output_bins": [
+                "x": 0.12976877901,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -31080,7 +31343,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -31334,9 +31597,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.36882926178000003,
-                "output_bins": [
+                "x": 0.36882926178000003,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -31588,7 +31850,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -31842,9 +32104,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.53453991372,
-                "output_bins": [
+                "x": 0.53453991372,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -32096,7 +32357,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -32350,9 +32611,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.98895336447,
-                "output_bins": [
+                "x": 0.98895336447,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -32604,7 +32864,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -32858,9 +33118,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 1.4040590724,
-                "output_bins": [
+                "x": 1.4040590724,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -33112,7 +33371,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -33366,9 +33625,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 3.49480474215,
-                "output_bins": [
+                "x": 3.49480474215,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -33620,7 +33878,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -33874,9 +34132,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 4.008727883850001,
-                "output_bins": [
+                "x": 4.008727883850001,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -34128,7 +34385,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -34382,9 +34639,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 4.19906133693,
-                "output_bins": [
+                "x": 4.19906133693,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -34636,7 +34892,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.014131119983189746,
                     0.0,
@@ -34892,13 +35148,21 @@
         ]
     },
     {
-        "collection": "gate_cytometry",
-        "gate_name": "F2_AmeRs",
-        "cytometry_data": [
+        "collection": "functions",
+        "name": "F2_AmeRs_cytometry",
+        "variables": [
             {
-                "maps_to_variable": "x",
-                "input": 0.02197060077,
-                "output_bins": [
+                "name": "x",
+                "map": "#//model/functions/input_composition"
+            },
+            {
+                "name": "bin"
+            }
+        ],
+        "table": [
+            {
+                "x": 0.02197060077,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -35150,7 +35414,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -35404,9 +35668,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.02291328336,
-                "output_bins": [
+                "x": 0.02291328336,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -35658,7 +35921,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -35912,9 +36175,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.03903825573,
-                "output_bins": [
+                "x": 0.03903825573,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -36166,7 +36428,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -36420,9 +36682,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.06940586736,
-                "output_bins": [
+                "x": 0.06940586736,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -36674,7 +36935,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -36928,9 +37189,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.12976877901,
-                "output_bins": [
+                "x": 0.12976877901,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -37182,7 +37442,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -37436,9 +37696,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.36882926178000003,
-                "output_bins": [
+                "x": 0.36882926178000003,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -37690,7 +37949,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -37944,9 +38203,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.53453991372,
-                "output_bins": [
+                "x": 0.53453991372,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -38198,7 +38456,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -38452,9 +38710,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.98895336447,
-                "output_bins": [
+                "x": 0.98895336447,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -38706,7 +38963,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -38960,9 +39217,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 1.4040590724,
-                "output_bins": [
+                "x": 1.4040590724,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -39214,7 +39470,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -39468,9 +39724,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 3.49480474215,
-                "output_bins": [
+                "x": 3.49480474215,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -39722,7 +39977,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -39976,9 +40231,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 4.008727883850001,
-                "output_bins": [
+                "x": 4.008727883850001,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -40230,7 +40484,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -40484,9 +40738,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 4.19906133693,
-                "output_bins": [
+                "x": 4.19906133693,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -40738,7 +40991,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -40994,13 +41247,21 @@
         ]
     },
     {
-        "collection": "gate_cytometry",
-        "gate_name": "E1_BetI",
-        "cytometry_data": [
+        "collection": "functions",
+        "name": "E1_BetI_cytometry",
+        "variables": [
             {
-                "maps_to_variable": "x",
-                "input": 0.02197060077,
-                "output_bins": [
+                "name": "x",
+                "map": "#//model/functions/input_composition"
+            },
+            {
+                "name": "bin"
+            }
+        ],
+        "table": [
+            {
+                "x": 0.02197060077,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -41252,7 +41513,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -41506,9 +41767,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.02291328336,
-                "output_bins": [
+                "x": 0.02291328336,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -41760,7 +42020,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -42014,9 +42274,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.03903825573,
-                "output_bins": [
+                "x": 0.03903825573,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -42268,7 +42527,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -42522,9 +42781,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.06940586736,
-                "output_bins": [
+                "x": 0.06940586736,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -42776,7 +43034,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -43030,9 +43288,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.12976877901,
-                "output_bins": [
+                "x": 0.12976877901,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -43284,7 +43541,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -43538,9 +43795,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.36882926178000003,
-                "output_bins": [
+                "x": 0.36882926178000003,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -43792,7 +44048,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -44046,9 +44302,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.53453991372,
-                "output_bins": [
+                "x": 0.53453991372,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -44300,7 +44555,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -44554,9 +44809,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 0.98895336447,
-                "output_bins": [
+                "x": 0.98895336447,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -44808,7 +45062,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -45062,9 +45316,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 1.4040590724,
-                "output_bins": [
+                "x": 1.4040590724,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -45316,7 +45569,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -45570,9 +45823,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 3.49480474215,
-                "output_bins": [
+                "x": 3.49480474215,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -45824,7 +46076,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -46078,9 +46330,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 4.008727883850001,
-                "output_bins": [
+                "x": 4.008727883850001,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -46332,7 +46583,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,
@@ -46586,9 +46837,8 @@
                 ]
             },
             {
-                "maps_to_variable": "x",
-                "input": 4.19906133693,
-                "output_bins": [
+                "x": 4.19906133693,
+                "bin": [
                     0.001,
                     0.0010568175092136585,
                     0.001116863247780561,
@@ -46840,7 +47090,7 @@
                     895.3647655495937,
                     946.237161365793
                 ],
-                "output_counts": [
+                "output": [
                     0.0,
                     0.0,
                     0.0,

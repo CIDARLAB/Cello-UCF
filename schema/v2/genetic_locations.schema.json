@@ -7,7 +7,7 @@
 	"definitions": {
 		"type": {
 			"type": "string",
-			"enum": ["file"]
+			"enum": ["file", "ncbi"]
 		}
 	},
 	"properties": {

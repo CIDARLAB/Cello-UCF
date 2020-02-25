@@ -1,0 +1,194 @@
+[
+	{
+		"collection": "input_sensors",
+		"name": "LacI_sensor",
+		"model": "LacI_sensor_model",
+		"structure": "LacI_sensor_structure"
+	},
+	{
+		"collection": "models",
+		"name": "LacI_sensor_model",
+		"functions": {
+			"response_function": "sensor_response"
+		},
+		"parameters": [
+			{
+				"name": "ymax",
+				"value": 1.686,
+				"description": "Maximal transcription"
+			},
+			{
+				"name": "ymin",
+				"value": 0.008,
+				"description": "Minimal transcription"
+			},
+			{
+				"name": "alpha",
+				"value": 0.73,
+				"description": "Tandem parameter"
+			},
+			{
+				"name": "beta",
+				"value": 0.04,
+				"description": "Tandem parameter"
+			}
+		]
+	},
+	{
+		"collection": "structures",
+		"name": "LacI_sensor_structure",
+		"outputs": [
+			"pTac"
+		]
+	},
+	{
+		"collection": "input_sensors",
+		"name": "TetR_sensor",
+		"model": "TetR_sensor_model",
+		"structure": "TetR_sensor_structure"
+	},
+	{
+		"collection": "models",
+		"name": "TetR_sensor_model",
+		"functions": {
+			"response_function": "sensor_response"
+		},
+		"parameters": [
+			{
+				"name": "ymax",
+				"value": 1.967,
+				"description": "Maximal transcription"
+			},
+			{
+				"name": "ymin",
+				"value": 0.04,
+				"description": "Minimal transcription"
+			},
+			{
+				"name": "alpha",
+				"value": 0.69,
+				"description": "Tandem parameter"
+			},
+			{
+				"name": "beta",
+				"value": 1.00,
+				"description": "Tandem parameter"
+			}
+		]
+	},
+	{
+		"collection": "structures",
+		"name": "TetR_sensor_structure",
+		"outputs": [
+			"pTet"
+		]
+	},
+	{
+		"collection": "input_sensors",
+		"name": "LuxR_sensor",
+		"model": "LuxR_sensor_model",
+		"structure": "LuxR_sensor_structure"
+	},
+	{
+		"collection": "models",
+		"name": "LuxR_sensor_model",
+		"functions": {
+			"response_function": "sensor_response"
+		},
+		"parameters": [
+			{
+				"name": "ymax",
+				"value": 0.03,
+				"description": "Maximal transcription"
+			},
+			{
+				"name": "ymin",
+				"value": 2.234,
+				"description": "Minimal transcription"
+			},
+			{
+				"name": "alpha",
+				"value": 0.80,
+				"description": "Tandem parameter"
+			},
+			{
+				"name": "beta",
+				"value": 1.00,
+				"description": "Tandem parameter"
+			}
+		]
+	},
+	{
+		"collection": "structures",
+		"name": "LuxR_sensor_structure",
+		"outputs": [
+			"pLux2"
+		]
+	},
+	{
+		"collection": "input_sensors",
+		"name": "CinR_sensor",
+		"model": "CinR_sensor_model",
+		"structure": "CinR_sensor_structure"
+	},
+	{
+		"collection": "models",
+		"name": "CinR_sensor_model",
+		"functions": {
+			"response_function": "sensor_response"
+		},
+		"parameters": [
+			{
+				"name": "ymax",
+				"value": 3.178,
+				"description": "Maximal transcription"
+			},
+			{
+				"name": "ymin",
+				"value": 0.005,
+				"description": "Minimal transcription"
+			},
+			{
+				"name": "alpha",
+				"value": 0.01,
+				"description": "Tandem parameter"
+			},
+			{
+				"name": "beta",
+				"value": 0.99,
+				"description": "Tandem parameter"
+			}
+		]
+	},
+	{
+		"collection": "structures",
+		"name": "CinR_sensor_structure",
+		"outputs": [
+			"pCin"
+		]
+	},
+	{
+		"collection": "parts",
+		"type": "promoter",
+		"name": "pTac",
+		"dnasequence": "AACGATCGTTGGCTGTGTTGACAATTAATCATCGGCTCGTATAATGTGTGGAATTGTGAGCGCTCACAATT"
+	},
+	{
+		"collection": "parts",
+		"type": "promoter",
+		"name": "pTet",
+		"dnasequence": "TACTCCACCGTTGGCTTTTTTCCCTATCAGTGATAGAGATTGACATCCCTATCAGTGATAGAGATAATGAGCAC"
+	},
+	{
+		"collection": "parts",
+		"type": "promoter",
+		"name": "pLux2",
+		"dnasequence": "ATAGCTTCTTACCGGACCTGTAGGATCGTACAGGTTTACGCAAGAAAATGGTTTGTTATTTTCGAATAAA"
+	},
+	{
+		"collection": "parts",
+		"type": "promoter",
+		"name": "pCin",
+		"dnasequence": "CCCTTTGTGCGTCCAAACGGACGCACGGCGCTCTAAAGCGGGTCGCGATCTTTCAGATTCGCTCCTCGCGCTTTCAGTCTTTGTTTTGGCGCATGTCGTTATCGCAAAACCGCTGCACACTTTTGCGCGACATGCTCTGATCCCCCTCATCTGGGGGGGCCTATCTGAGGGAATTTCCGATCCGGCTCGCCTGAACCATTCTGCTTTCCACGAACTTGAAAACGCT"
+	}
+]

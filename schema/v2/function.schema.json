@@ -18,7 +18,14 @@
 		},
 		"table": {
 			"description": "A lookup table.",
-			"type": "object"
+			"oneOf": [
+				{
+					"type": "object"
+				},
+				{
+					"type": "array"
+				}
+			]
 		},
 		"variables": {
 			"description": "Independent variables of the equation.",

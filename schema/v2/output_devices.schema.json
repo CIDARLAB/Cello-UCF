@@ -1,0 +1,29 @@
+{
+	"$id": "output_device.schema.json",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "output_device",
+	"description": "A `output_device` object in a UCF document.",
+	"type": "object",
+	"properties": {
+		"collection": {
+			"constant": "output_devices"
+		},
+		"name": {
+			"type": "string",
+			"description": "The name of the output device."
+		},
+		"model": {
+			"type": "string"
+		},
+		"structure": {
+			"type": "string"
+		}
+	},
+	"required": [
+		"collection",
+		"name",
+		"model",
+		"structure"
+	],
+	"additionalProperties": false
+}

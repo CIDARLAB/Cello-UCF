@@ -1,5 +1,7 @@
 from .test_schemas import TestSchemas
 from .test_ucfs import TestUCFs
+from .test_input_sensor_files import TestInputSensorFiles
+from .test_output_device_files import TestOutputDeviceFiles
 import unittest
 
 

@@ -11,21 +11,21 @@ __author__ = 'Timothy S. Jones <jonests@bu.edu>, Densmore Lab, BU'
 __license__ = 'GPL3'
 
 
-class TestOutputDeviceFiles(unittest.TestCase, metaclass=TestFileMeta):
+class TestUserConstraintsFileSyntax(unittest.TestCase, metaclass=TestFileMeta):
 
     def get_test_args():
-        files = glob("files/v2/output/**/*.output.json", recursive=True)
+        files = glob("files/v2/ucf/**/*.UCF.json", recursive=True)
         for f in files:
             yield (basename(f), f)
 
     def check_file(self, f):
-        with open("schemas/v2/output_device_file.schema.json") as schema_file:
+        with open("schemas/v2/ucf.schema.json") as schema_file:
             schema = json.load(schema_file)
         resolver = jsonschema.RefResolver("file://" + getcwd() + "/schemas/v2/", "")
         validator = jsonschema.Draft7Validator(schema, resolver=resolver)
-        with open(f) as odf_file:
-            odf = json.load(odf_file)
-        validator.validate(odf)
+        with open(f) as ucf_file:
+            ucf = json.load(ucf_file)
+        validator.validate(ucf)
 
 
 if __name__ == '__main__':

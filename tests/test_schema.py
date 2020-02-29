@@ -10,7 +10,7 @@ __author__ = 'Timothy S. Jones <jonests@bu.edu>, Densmore Lab, BU'
 __license__ = 'GPL3'
 
 
-class TestSchemas(unittest.TestCase, metaclass=TestFileMeta):
+class TestSchema(unittest.TestCase, metaclass=TestFileMeta):
 
     def get_test_args():
         files = glob("schemas/**/*.schema.json", recursive=True)

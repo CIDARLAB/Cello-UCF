@@ -17,7 +17,7 @@ class TestSchema(unittest.TestCase, metaclass=TestFileMeta):
         for f in files:
             yield (basename(f), f)
 
-    def check_file(self, f):
+    def _test_schema(self, f):
         with open(f) as schema_file:
             schema = json.load(schema_file)
         validator = jsonschema.Draft7Validator(schema)

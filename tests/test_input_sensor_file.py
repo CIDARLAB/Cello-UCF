@@ -18,7 +18,7 @@ class TestInputSensorFileSyntax(unittest.TestCase, metaclass=TestFileMeta):
         for f in files:
             yield (basename(f), f)
 
-    def check_file(self, f):
+    def _test_syntax(self, f):
         with open("schemas/v2/input_sensor_file.schema.json") as schema_file:
             schema = json.load(schema_file)
         resolver = jsonschema.RefResolver("file://" + getcwd() + "/schemas/v2/", "")

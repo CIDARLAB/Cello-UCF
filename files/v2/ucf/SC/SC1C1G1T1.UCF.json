@@ -6586,7 +6586,7 @@
     },
     {
         "collection": "functions",
-        "name": "P1_PhlF_a_toxicity",
+        "name": "P1_PhlF_toxicity",
         "variables": [
             {
                 "name": "x",
@@ -6626,7 +6626,7 @@
     },
     {
         "collection": "functions",
-        "name": "P1_BM3RI_a_toxicity",
+        "name": "P1_BM3RI_toxicity",
         "variables": [
             {
                 "name": "x",
@@ -6666,7 +6666,7 @@
     },
     {
         "collection": "functions",
-        "name": "P1_QacR_a_toxicity",
+        "name": "P1_QacR_toxicity",
         "variables": [
             {
                 "name": "x",
@@ -6706,7 +6706,7 @@
     },
     {
         "collection": "functions",
-        "name": "P1_CI_a_toxicity",
+        "name": "P1_CI_toxicity",
         "variables": [
             {
                 "name": "x",
@@ -6746,7 +6746,7 @@
     },
     {
         "collection": "functions",
-        "name": "P2_CI_a_toxicity",
+        "name": "P2_CI_toxicity",
         "variables": [
             {
                 "name": "x",
@@ -6786,7 +6786,7 @@
     },
     {
         "collection": "functions",
-        "name": "P1_LexA_a_toxicity",
+        "name": "P1_LexA_toxicity",
         "variables": [
             {
                 "name": "x",
@@ -6826,7 +6826,7 @@
     },
     {
         "collection": "functions",
-        "name": "P2_LexA_a_toxicity",
+        "name": "P2_LexA_toxicity",
         "variables": [
             {
                 "name": "x",
@@ -6866,7 +6866,7 @@
     },
     {
         "collection": "functions",
-        "name": "P1_CI434_a_toxicity",
+        "name": "P1_CI434_toxicity",
         "variables": [
             {
                 "name": "x",
@@ -6906,7 +6906,7 @@
     },
     {
         "collection": "functions",
-        "name": "P2_CI434_a_toxicity",
+        "name": "P2_CI434_toxicity",
         "variables": [
             {
                 "name": "x",
@@ -6946,7 +6946,7 @@
     },
     {
         "collection": "functions",
-        "name": "P1_HKCI_a_toxicity",
+        "name": "P1_HKCI_toxicity",
         "variables": [
             {
                 "name": "x",
@@ -6986,7 +6986,7 @@
     },
     {
         "collection": "functions",
-        "name": "P1_PsrA_a_toxicity",
+        "name": "P1_PsrA_toxicity",
         "variables": [
             {
                 "name": "x",
@@ -7026,7 +7026,7 @@
     },
     {
         "collection": "functions",
-        "name": "P1_IcaR_a_toxicity",
+        "name": "P1_IcaR_toxicity",
         "variables": [
             {
                 "name": "x",
@@ -7066,7 +7066,7 @@
     },
     {
         "collection": "functions",
-        "name": "P1_PhlF_a_cytometry",
+        "name": "P1_PhlF_cytometry",
         "variables": [
             {
                 "name": "x",
@@ -13165,7 +13165,7 @@
     },
     {
         "collection": "functions",
-        "name": "P1_BM3RI_a_cytometry",
+        "name": "P1_BM3RI_cytometry",
         "variables": [
             {
                 "name": "x",
@@ -19264,7 +19264,7 @@
     },
     {
         "collection": "functions",
-        "name": "P1_QacR_a_cytometry",
+        "name": "P1_QacR_cytometry",
         "variables": [
             {
                 "name": "x",
@@ -25363,7 +25363,7 @@
     },
     {
         "collection": "functions",
-        "name": "P1_CI_a_cytometry",
+        "name": "P1_CI_cytometry",
         "variables": [
             {
                 "name": "x",
@@ -31462,7 +31462,7 @@
     },
     {
         "collection": "functions",
-        "name": "P2_CI_a_cytometry",
+        "name": "P2_CI_cytometry",
         "variables": [
             {
                 "name": "x",
@@ -37561,7 +37561,7 @@
     },
     {
         "collection": "functions",
-        "name": "P1_LexA_a_cytometry",
+        "name": "P1_LexA_cytometry",
         "variables": [
             {
                 "name": "x",
@@ -43660,7 +43660,7 @@
     },
     {
         "collection": "functions",
-        "name": "P2_LexA_a_cytometry",
+        "name": "P2_LexA_cytometry",
         "variables": [
             {
                 "name": "x",
@@ -49759,7 +49759,7 @@
     },
     {
         "collection": "functions",
-        "name": "P1_CI434_a_cytometry",
+        "name": "P1_CI434_cytometry",
         "variables": [
             {
                 "name": "x",
@@ -55858,7 +55858,7 @@
     },
     {
         "collection": "functions",
-        "name": "P2_CI434_a_cytometry",
+        "name": "P2_CI434_cytometry",
         "variables": [
             {
                 "name": "x",
@@ -61957,7 +61957,7 @@
     },
     {
         "collection": "functions",
-        "name": "P1_HKCI_a_cytometry",
+        "name": "P1_HKCI_cytometry",
         "variables": [
             {
                 "name": "x",
@@ -68056,7 +68056,7 @@
     },
     {
         "collection": "functions",
-        "name": "P1_PsrA_a_cytometry",
+        "name": "P1_PsrA_cytometry",
         "variables": [
             {
                 "name": "x",
@@ -74155,7 +74155,7 @@
     },
     {
         "collection": "functions",
-        "name": "P1_IcaR_a_cytometry",
+        "name": "P1_IcaR_cytometry",
         "variables": [
             {
                 "name": "x",

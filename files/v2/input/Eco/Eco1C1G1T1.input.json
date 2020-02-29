@@ -49,7 +49,7 @@
 	},
 	{
 		"collection": "models",
-		"name": "_sensor_model",
+		"name": "TetR_sensor_model",
 		"functions": {
 			"response_function": "sensor_response"
 		},
@@ -84,6 +84,12 @@
 		]
 	},
 	{
+		"collection": "input_sensors",
+		"name": "AraC_sensor",
+		"model": "AraC_sensor_model",
+		"structure": "AraC_sensor_structure"
+	},
+	{
 		"collection": "models",
 		"name": "AraC_sensor_model",
 		"functions": {
@@ -114,7 +120,7 @@
 	},
 	{
 		"collection": "structures",
-		"name": "_sensor_structure",
+		"name": "AraC_sensor_structure",
 		"outputs": [
 			"pBAD"
 		]

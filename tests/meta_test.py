@@ -21,6 +21,15 @@ def get_normative_json(file_name):
     return normative
 
 
+def ref_obj_exists(j, coll, name):
+    b = False
+    for dst in j[coll]:
+        if dst["name"] == name:
+            b = True
+            break
+    return b
+
+
 class TestFileMeta(type):
     def __new__(cls, name, bases, attrs):
         def create_func(test_name, file_name, test_func):

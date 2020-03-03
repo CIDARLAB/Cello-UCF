@@ -21,7 +21,7 @@
 	},
 	{
 		"collection": "structures",
-		"name": "YFP_reporter",
+		"name": "YFP_reporter_structure",
 		"inputs": [
 			{
 				"name": "in1",

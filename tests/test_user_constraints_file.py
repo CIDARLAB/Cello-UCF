@@ -4,27 +4,11 @@ import jsonschema
 from glob import glob
 from os import getcwd
 from os.path import basename
-from .meta_test import TestFileMeta
+from .meta_test import TestFileMeta, get_json_file_contents, get_normative_json
 
 
 __author__ = 'Timothy S. Jones <jonests@bu.edu>, Densmore Lab, BU'
 __license__ = 'GPL3'
-
-
-def get_file_contents(file_name):
-    with open(file_name) as f:
-        obj = json.load(f)
-    return obj
-
-
-def get_normative_json(file_name):
-    obj = get_file_contents(file_name)
-    normative = {}
-    for coll in obj:
-        if coll["collection"] not in normative:
-            normative[coll["collection"]] = []
-        normative[coll["collection"]].append(coll)
-    return normative
 
 
 class TestUserConstraintsFileSyntax(unittest.TestCase, metaclass=TestFileMeta):
@@ -35,8 +19,7 @@ class TestUserConstraintsFileSyntax(unittest.TestCase, metaclass=TestFileMeta):
             yield (basename(f), f)
 
     def _test_syntax(self, f):
-        with open("schemas/v2/ucf.schema.json") as schema_file:
-            schema = json.load(schema_file)
+        schema = get_json_file_contents("schemas/v2/ucf.schema.json")
         resolver = jsonschema.RefResolver("file://" + getcwd() + "/schemas/v2/", "")
         validator = jsonschema.Draft7Validator(schema, resolver=resolver)
         with open(f) as ucf_file:
@@ -58,7 +41,7 @@ class TestUserConstraintsFileStructure(unittest.TestCase, metaclass=TestFileMeta
                 b = True
                 break
         self.assertTrue(b, msg="{} missing from file.".format(name))
-        
+
     def _test_gate_models_exist(self, f):
         j = get_normative_json(f)
         for gate in j["gates"]:

@@ -4,7 +4,7 @@ import jsonschema
 from glob import glob
 from os import getcwd
 from os.path import basename
-from .meta_test import TestFileMeta
+from .meta_test import TestFileMeta, get_json_file_contents
 
 
 __author__ = 'Timothy S. Jones <jonests@bu.edu>, Densmore Lab, BU'
@@ -19,8 +19,7 @@ class TestOutputDeviceFileSyntax(unittest.TestCase, metaclass=TestFileMeta):
             yield (basename(f), f)
 
     def _test_syntax(self, f):
-        with open("schemas/v2/output_device_file.schema.json") as schema_file:
-            schema = json.load(schema_file)
+        schema = get_json_file_contents("schemas/v2/output_device_file.schema.json")
         resolver = jsonschema.RefResolver("file://" + getcwd() + "/schemas/v2/", "")
         validator = jsonschema.Draft7Validator(schema, resolver=resolver)
         with open(f) as odf_file:

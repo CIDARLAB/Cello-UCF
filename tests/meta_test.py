@@ -1,5 +1,24 @@
+import json
+
+
 __author__ = 'Timothy S. Jones <jonests@bu.edu>, Densmore Lab, BU'
 __license__ = 'GPL3'
+
+
+def get_json_file_contents(file_name):
+    with open(file_name) as f:
+        obj = json.load(f)
+    return obj
+
+
+def get_normative_json(file_name):
+    obj = get_json_file_contents(file_name)
+    normative = {}
+    for coll in obj:
+        if coll["collection"] not in normative:
+            normative[coll["collection"]] = []
+        normative[coll["collection"]].append(coll)
+    return normative
 
 
 class TestFileMeta(type):

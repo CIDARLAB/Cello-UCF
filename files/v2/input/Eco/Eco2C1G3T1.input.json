@@ -73,7 +73,7 @@
         "collection": "parts",
         "name": "PTac",
         "type": "promoter",
-        "dnasequence": ""
+        "dnasequence": "AACGATCGTTGGCTGTGTTGACAATTAATCATCGGCTCGTATAATGTGTGGAATTGTGAGCGCTCACAATT"
     },
     {
         "collection": "input_sensors",

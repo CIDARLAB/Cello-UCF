@@ -25,7 +25,9 @@
 		}
 	},
 	"required": [
-		"collection"
+		"collection",
+		"signal_carrier_units",
+		"normalization_instructions"
 	],
 	"additionalProperties": false
 }

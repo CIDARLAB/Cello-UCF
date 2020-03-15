@@ -14,6 +14,15 @@
 		"normalization_instructions": {
 			"type": "string"
 		},
+		"integration_description": {
+			"type": "string"
+		},
+		"integrated_sequence": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			}
+		},
 		"plasmid_description": {
 			"type": "string"
 		},

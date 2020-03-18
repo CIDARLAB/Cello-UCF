@@ -63,6 +63,12 @@
 			"Pxyl"
 		]
 	},
+    {
+		"collection": "input_sensors",
+		"name": "IPTG_sensor",
+		"model": "IPTG_sensor_model",
+		"structure": "IPTG_sensor_structure"
+	},
 	{
 		"collection": "models",
 		"name": "IPTG_sensor_model",

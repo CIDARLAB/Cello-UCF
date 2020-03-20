@@ -81,6 +81,35 @@
         ]
     },
     {
+        "collection": "genetic_locations",
+        "locations": [
+            {
+                "symbol": "L1",
+                "description": "URA3",
+                "locus": {
+                    "start": 116167,
+                    "end": 116970
+                },
+                "sequence": {
+                    "type": "ncbi",
+                    "ref": "JRIS00000000"
+                }
+            },
+            {
+                "symbol": "L2",
+                "description": "LEU2",
+                "locus": {
+                    "start": 91324,
+                    "end": 92418
+                },
+                "sequence": {
+                    "type": "ncbi",
+                    "ref": "JRIS00000000"
+                }
+            }
+        ]
+    },
+    {
         "collection": "logic_constraints",
         "available_gates": [
             {
@@ -5874,78 +5903,311 @@
         "rules": {
             "function": "AND",
             "rules": [
-                "NOT P1_QacR_a NEXTTO Bscar",
-                "NOT P1_QacR_b NEXTTO Bscar",
-                "NOT P1_QacR_a NEXTTO Lscar",
-                "NOT P1_QacR_b NEXTTO Lscar",
-                "NOT P1_QacR_a NEXTTO Cscar",
-                "NOT P1_QacR_b NEXTTO Cscar",
-                "NOT P1_QacR_a NEXTTO Mscar",
-                "NOT P1_QacR_b NEXTTO Mscar",
-                "NOT P1_IcaR_a NEXTTO Bscar",
-                "NOT P1_IcaR_b NEXTTO Bscar",
-                "NOT P1_IcaR_a NEXTTO Lscar",
-                "NOT P1_IcaR_b NEXTTO Lscar",
-                "NOT P1_IcaR_a NEXTTO Cscar",
-                "NOT P1_IcaR_b NEXTTO Cscar",
-                "NOT P1_IcaR_a NEXTTO Mscar",
-                "NOT P1_IcaR_b NEXTTO Mscar",
-                "NOT P1_CI434_a NEXTTO Bscar",
-                "NOT P1_CI434_b NEXTTO Bscar",
-                "NOT P1_CI434_a NEXTTO Lscar",
-                "NOT P1_CI434_b NEXTTO Lscar",
-                "NOT P1_CI434_a NEXTTO Cscar",
-                "NOT P1_CI434_b NEXTTO Cscar",
-                "NOT P1_CI434_a NEXTTO Mscar",
-                "NOT P1_CI434_b NEXTTO Mscar",
-                "P1_CI434_a BEFORE Gscar",
-                "P1_CI434_b AFTER Kscar",
-                "P1_CI434_b BEFORE Oscar",
-                "NOT P2_CI434_a NEXTTO Bscar",
-                "NOT P2_CI434_b NEXTTO Bscar",
-                "NOT P2_CI434_a NEXTTO Lscar",
-                "NOT P2_CI434_b NEXTTO Lscar",
-                "NOT P2_CI434_a NEXTTO Cscar",
-                "NOT P2_CI434_b NEXTTO Cscar",
-                "NOT P2_CI434_a NEXTTO Mscar",
-                "NOT P2_CI434_b NEXTTO Mscar",
-                "P2_CI434_a BEFORE Gscar",
-                "P2_CI434_b AFTER Kscar",
-                "P2_CI434_b BEFORE Oscar",
-                "P1_PsrA_a NEXTTO Cscar",
-                "P1_PsrA_b NEXTTO Mscar",
-                "P1_P1_LexA_a BEFORE Bscar",
-                "NOT P1_LexA_b NEXTTO Bscar",
-                "NOT P1_LexA_b NEXTTO Cscar",
-                "P1_LexA_b BEFORE Gscar",
-                "P2_LexA_a BEFORE Bscar",
-                "NOT P2_LexA_b NEXTTO Bscar",
-                "NOT P2_LexA_b NEXTTO Cscar",
-                "P2_LexA_b BEFORE Gscar",
-                "NOT P1_QacR_a NEXTTO Hscar",
-                "NOT P1_QacR_b NEXTTO Hscar",
-                "NOT P1_IcaR_a NEXTTO Hscar",
-                "NOT P1_IcaR_b NEXTTO Hscar",
-                "NOT P1_CI434_b NEXTTO Hscar",
-                "NOT P2_CI434_b NEXTTO Hscar",
-                "NOT P1_PhlF_a BEFORE Hscar",
-                "NOT P1_PhlF_b BEFORE Hscar",
-                "NOT P1_BM3RI_b BEFORE Hscar",
-                "NOT P1_HKCI_b BEFORE Hscar",
-                "NOT P1_CI_a NEXTTO Hscar",
-                "NOT P1_CI_b NEXTTO Hscar",
-                "NOT P2_CI_a NEXTTO Hscar",
-                "NOT P2_CI_b NEXTTO Hscar",
-                "P1_BM3RI_a NEXTTO Bscar",
-                "P1_HKCI_a BEFORE Escar",
-                "P1_PhlF_a BEFORE Nscar",
-                "P1_PhlF_b BEFORE Nscar",
-                "P1_BM3RI_b BEFORE Nscar",
-                "YFP_reporter_a NEXTTO Jscar",
-                "YFP_reporter_b NEXTTO Jscar",
-                "YFP_reporter_b AFTER Cscar",
-                "YFP_reporter_b BEFORE Lscar",
-				"ALL_FORWARD"
+                {
+                    "function": "AND",
+                    "rules": [
+                        "NOT P1_QacR_a NEXTTO Bscar",
+                        "NOT P1_QacR_b NEXTTO Bscar",
+                        "NOT P1_QacR_a NEXTTO Lscar",
+                        "NOT P1_QacR_b NEXTTO Lscar",
+                        "NOT P1_QacR_a NEXTTO Cscar",
+                        "NOT P1_QacR_b NEXTTO Cscar",
+                        "NOT P1_QacR_a NEXTTO Mscar",
+                        "NOT P1_QacR_b NEXTTO Mscar",
+                        "NOT P1_IcaR_a NEXTTO Bscar",
+                        "NOT P1_IcaR_b NEXTTO Bscar",
+                        "NOT P1_IcaR_a NEXTTO Lscar",
+                        "NOT P1_IcaR_b NEXTTO Lscar",
+                        "NOT P1_IcaR_a NEXTTO Cscar",
+                        "NOT P1_IcaR_b NEXTTO Cscar",
+                        "NOT P1_IcaR_a NEXTTO Mscar",
+                        "NOT P1_IcaR_b NEXTTO Mscar",
+                        "NOT P1_CI434_a NEXTTO Bscar",
+                        "NOT P1_CI434_b NEXTTO Bscar",
+                        "NOT P1_CI434_a NEXTTO Lscar",
+                        "NOT P1_CI434_b NEXTTO Lscar",
+                        "NOT P1_CI434_a NEXTTO Cscar",
+                        "NOT P1_CI434_b NEXTTO Cscar",
+                        "NOT P1_CI434_a NEXTTO Mscar",
+                        "NOT P1_CI434_b NEXTTO Mscar",
+                        "P1_CI434_a BEFORE Gscar",
+                        "P1_CI434_b AFTER Kscar",
+                        "P1_CI434_b BEFORE Oscar",
+                        "NOT P2_CI434_a NEXTTO Bscar",
+                        "NOT P2_CI434_b NEXTTO Bscar",
+                        "NOT P2_CI434_a NEXTTO Lscar",
+                        "NOT P2_CI434_b NEXTTO Lscar",
+                        "NOT P2_CI434_a NEXTTO Cscar",
+                        "NOT P2_CI434_b NEXTTO Cscar",
+                        "NOT P2_CI434_a NEXTTO Mscar",
+                        "NOT P2_CI434_b NEXTTO Mscar",
+                        "P2_CI434_a BEFORE Gscar",
+                        "P2_CI434_b AFTER Kscar",
+                        "P2_CI434_b BEFORE Oscar",
+                        "P1_PsrA_a NEXTTO Cscar",
+                        "P1_PsrA_b NEXTTO Mscar",
+                        "P1_P1_LexA_a BEFORE Bscar",
+                        "NOT P1_LexA_b NEXTTO Bscar",
+                        "NOT P1_LexA_b NEXTTO Cscar",
+                        "P1_LexA_b BEFORE Gscar",
+                        "P2_LexA_a BEFORE Bscar",
+                        "NOT P2_LexA_b NEXTTO Bscar",
+                        "NOT P2_LexA_b NEXTTO Cscar",
+                        "P2_LexA_b BEFORE Gscar",
+                        "NOT P1_QacR_a NEXTTO Hscar",
+                        "NOT P1_QacR_b NEXTTO Hscar",
+                        "NOT P1_IcaR_a NEXTTO Hscar",
+                        "NOT P1_IcaR_b NEXTTO Hscar",
+                        "NOT P1_CI434_b NEXTTO Hscar",
+                        "NOT P2_CI434_b NEXTTO Hscar",
+                        "NOT P1_PhlF_a BEFORE Hscar",
+                        "NOT P1_PhlF_b BEFORE Hscar",
+                        "NOT P1_BM3RI_b BEFORE Hscar",
+                        "NOT P1_HKCI_b BEFORE Hscar",
+                        "NOT P1_CI_a NEXTTO Hscar",
+                        "NOT P1_CI_b NEXTTO Hscar",
+                        "NOT P2_CI_a NEXTTO Hscar",
+                        "NOT P2_CI_b NEXTTO Hscar",
+                        "P1_BM3RI_a NEXTTO Bscar",
+                        "P1_HKCI_a BEFORE Escar",
+                        "P1_PhlF_a BEFORE Nscar",
+                        "P1_PhlF_b BEFORE Nscar",
+                        "P1_BM3RI_b BEFORE Nscar",
+                        "YFP_reporter_a NEXTTO Jscar",
+                        "YFP_reporter_b NEXTTO Jscar",
+                        "YFP_reporter_b AFTER Cscar",
+                        "YFP_reporter_b BEFORE Lscar",
+				        "ALL_FORWARD"        
+                    ]
+                },
+                {
+                    "function": "OR",
+                    "rules": [
+                        {
+                            "function": "AND",
+                            "rules": [
+                                "P1_PhlF_a BEFORE L2",
+                                "P1_PhlF_b AFTER L2"
+                            ]
+                        },
+                        {
+                            "function": "AND",
+                            "rules": [
+                                "P1_PhlF_a AFTER L2",
+                                "P1_PhlF_b BEFORE L2"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "function": "OR",
+                    "rules": [
+                        {
+                            "function": "AND",
+                            "rules": [
+                                "P1_BM3RI_a BEFORE L2",
+                                "P1_BM3RI_b AFTER L2"
+                            ]
+                        },
+                        {
+                            "function": "AND",
+                            "rules": [
+                                "P1_BM3RI_a AFTER L2",
+                                "P1_BM3RI_b BEFORE L2"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "function": "OR",
+                    "rules": [
+                        {
+                            "function": "AND",
+                            "rules": [
+                                "P1_QacR_a BEFORE L2",
+                                "P1_QacR_b AFTER L2"
+                            ]
+                        },
+                        {
+                            "function": "AND",
+                            "rules": [
+                                "P1_QacR_a AFTER L2",
+                                "P1_QacR_b BEFORE L2"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "function": "OR",
+                    "rules": [
+                        {
+                            "function": "AND",
+                            "rules": [
+                                "P1_CI_a BEFORE L2",
+                                "P1_CI_b AFTER L2"
+                            ]
+                        },
+                        {
+                            "function": "AND",
+                            "rules": [
+                                "P1_CI_a AFTER L2",
+                                "P1_CI_b BEFORE L2"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "function": "OR",
+                    "rules": [
+                        {
+                            "function": "AND",
+                            "rules": [
+                                "P2_CI_a BEFORE L2",
+                                "P2_CI_b AFTER L2"
+                            ]
+                        },
+                        {
+                            "function": "AND",
+                            "rules": [
+                                "P2_CI_a AFTER L2",
+                                "P2_CI_b BEFORE L2"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "function": "OR",
+                    "rules": [
+                        {
+                            "function": "AND",
+                            "rules": [
+                                "P1_LexA_a BEFORE L2",
+                                "P1_LexA_b AFTER L2"
+                            ]
+                        },
+                        {
+                            "function": "AND",
+                            "rules": [
+                                "P1_LexA_a AFTER L2",
+                                "P1_LexA_b BEFORE L2"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "function": "OR",
+                    "rules": [
+                        {
+                            "function": "AND",
+                            "rules": [
+                                "P2_LexA_a BEFORE L2",
+                                "P2_LexA_b AFTER L2"
+                            ]
+                        },
+                        {
+                            "function": "AND",
+                            "rules": [
+                                "P2_LexA_a AFTER L2",
+                                "P2_LexA_b BEFORE L2"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "function": "OR",
+                    "rules": [
+                        {
+                            "function": "AND",
+                            "rules": [
+                                "P1_CI434_a BEFORE L2",
+                                "P1_CI434_b AFTER L2"
+                            ]
+                        },
+                        {
+                            "function": "AND",
+                            "rules": [
+                                "P1_CI434_a AFTER L2",
+                                "P1_CI434_b BEFORE L2"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "function": "OR",
+                    "rules": [
+                        {
+                            "function": "AND",
+                            "rules": [
+                                "P2_CI434_a BEFORE L2",
+                                "P2_CI434_b AFTER L2"
+                            ]
+                        },
+                        {
+                            "function": "AND",
+                            "rules": [
+                                "P2_CI434_a AFTER L2",
+                                "P2_CI434_b BEFORE L2"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "function": "OR",
+                    "rules": [
+                        {
+                            "function": "AND",
+                            "rules": [
+                                "P1_HKCI_a BEFORE L2",
+                                "P1_HKCI_b AFTER L2"
+                            ]
+                        },
+                        {
+                            "function": "AND",
+                            "rules": [
+                                "P1_HKCI_a AFTER L2",
+                                "P1_HKCI_b BEFORE L2"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "function": "OR",
+                    "rules": [
+                        {
+                            "function": "AND",
+                            "rules": [
+                                "P1_PsrA_a BEFORE L2",
+                                "P1_PsrA_b AFTER L2"
+                            ]
+                        },
+                        {
+                            "function": "AND",
+                            "rules": [
+                                "P1_PsrA_a AFTER L2",
+                                "P1_PsrA_b BEFORE L2"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "function": "OR",
+                    "rules": [
+                        {
+                            "function": "AND",
+                            "rules": [
+                                "P1_IcaR_a BEFORE L2",
+                                "P1_IcaR_b AFTER L2"
+                            ]
+                        },
+                        {
+                            "function": "AND",
+                            "rules": [
+                                "P1_IcaR_a AFTER L2",
+                                "P1_IcaR_b BEFORE L2"
+                            ]
+                        }
+                    ]
+                }
             ]
 		}
     },

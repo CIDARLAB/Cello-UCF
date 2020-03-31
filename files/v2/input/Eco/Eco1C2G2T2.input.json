@@ -31,6 +31,16 @@
 				"name": "beta",
 				"value": 0.04,
 				"description": "Tandem parameter"
+			},
+			{
+				"name": "tau_on",
+				"value": 3.5,
+				"description": "Kinetics parameter (induction)"
+			},
+			{
+				"name": "tau_off",
+				"value": 4.0,
+				"description": "Kinetics parameter (relaxation)"
 			}
 		]
 	},
@@ -73,6 +83,16 @@
 				"name": "beta",
 				"value": 1.00,
 				"description": "Tandem parameter"
+			},
+			{
+				"name": "tau_on",
+				"value": 3.5,
+				"description": "Kinetics parameter (induction)"
+			},
+			{
+				"name": "tau_off",
+				"value": 4.0,
+				"description": "Kinetics parameter (relaxation)"
 			}
 		]
 	},
@@ -98,12 +118,12 @@
 		"parameters": [
 			{
 				"name": "ymax",
-				"value": 0.03,
+				"value": 2.234,
 				"description": "Maximal transcription"
 			},
 			{
 				"name": "ymin",
-				"value": 2.234,
+				"value": 0.03,
 				"description": "Minimal transcription"
 			},
 			{
@@ -115,6 +135,16 @@
 				"name": "beta",
 				"value": 1.00,
 				"description": "Tandem parameter"
+			},
+			{
+				"name": "tau_on",
+				"value": 2.3,
+				"description": "Kinetics parameter (induction)"
+			},
+			{
+				"name": "tau_off",
+				"value": 4.0,
+				"description": "Kinetics parameter (relaxation)"
 			}
 		]
 	},
@@ -157,6 +187,16 @@
 				"name": "beta",
 				"value": 0.99,
 				"description": "Tandem parameter"
+			},
+			{
+				"name": "tau_on",
+				"value": 2.7,
+				"description": "Kinetics parameter (induction)"
+			},
+			{
+				"name": "tau_off",
+				"value": 4.0,
+				"description": "Kinetics parameter (relaxation)"
 			}
 		]
 	},

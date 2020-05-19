@@ -5,7 +5,7 @@
   "version": "Eco2C1G3T1",
   "date": "Mon Nov 19 10:14:11 EDT 2019",
   "author": [
-    "Yongjin Park, Shuyi Zhang""
+    "Yongjin Park, Shuyi Zhang"
   ],
   "organism": "Escherichia coli MG1655 K-12",
   "genome": "wildtype (NCBI RefSeq: NC_000913.3) with three landing pads integrated",
@@ -15,7 +15,7 @@
 },
 {
   "collection": "measurement_std",
-  "signal_carrier_units": "RPUG,
+  "signal_carrier_units": "RPUG",
   "normalization_instructions": "The following equation converts the median YFP fluorescence to RPUG.  RPUG = (YFP – YFP0)/(YFPRPUG – YFP0), where YFP is the median fluorescence of the cells of interest, YFP0 is the median autofluorescence, and YFPRPUG is the median fluorescence of the cells containing the measurement standard on the genome landing pad",
   "plasmid_description": "Genome integrated RPU standard where YFP fluorescent protein is driven by J23101 promoter and B0034 RBS. RiboJ was used as a ribozyme insulator. A bidirectional terminator DT3 was used to insulate YFP from the genome. The insertion is in the landing pad #1, at the position of 4196314",
   "plasmid_sequence": [

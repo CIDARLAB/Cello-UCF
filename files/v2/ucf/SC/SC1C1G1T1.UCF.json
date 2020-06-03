@@ -5946,7 +5946,7 @@
 						"P2_CI434_b BEFORE Oscar",
 						"P1_PsrA_a NEXTTO Cscar",
 						"P1_PsrA_b NEXTTO Mscar",
-						"P1_P1_LexA_a BEFORE Bscar",
+						"P1_LexA_a BEFORE Bscar",
 						"NOT P1_LexA_b NEXTTO Bscar",
 						"NOT P1_LexA_b NEXTTO Cscar",
 						"P1_LexA_b BEFORE Gscar",

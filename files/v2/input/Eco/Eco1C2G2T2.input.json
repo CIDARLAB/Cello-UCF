@@ -9,7 +9,8 @@
 		"collection": "models",
 		"name": "LacI_sensor_model",
 		"functions": {
-			"response_function": "sensor_response"
+			"response_function": "sensor_response",
+			"tandem_interference_factor": "sensor_tandem_interference_factor"
 		},
 		"parameters": [
 			{
@@ -61,7 +62,8 @@
 		"collection": "models",
 		"name": "TetR_sensor_model",
 		"functions": {
-			"response_function": "sensor_response"
+			"response_function": "sensor_response",
+			"tandem_interference_factor": "sensor_tandem_interference_factor"
 		},
 		"parameters": [
 			{
@@ -113,7 +115,8 @@
 		"collection": "models",
 		"name": "LuxR_sensor_model",
 		"functions": {
-			"response_function": "sensor_response"
+			"response_function": "sensor_response",
+			"tandem_interference_factor": "sensor_tandem_interference_factor"
 		},
 		"parameters": [
 			{
@@ -165,7 +168,8 @@
 		"collection": "models",
 		"name": "CinR_sensor_model",
 		"functions": {
-			"response_function": "sensor_response"
+			"response_function": "sensor_response",
+			"tandem_interference_factor": "sensor_tandem_interference_factor"
 		},
 		"parameters": [
 			{
@@ -212,6 +216,21 @@
 			{
 				"name": "ymin",
 				"map": "#//model/parameters/ymin"
+			}
+		]
+	},
+	{
+		"collection": "functions",
+		"name": "sensor_tandem_interference_factor",
+		"equation": "alpha * beta^(1 - $STATE)",
+		"parameters": [
+			{
+				"name": "alpha",
+				"map": "#//model/parameters/alpha"
+			},
+			{
+				"name": "beta",
+				"map": "#//model/parameters/beta"
 			}
 		]
 	},

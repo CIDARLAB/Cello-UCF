@@ -5923,13 +5923,13 @@
 						"[26] EQUALS Nscar",
 						"[28] EQUALS Oscar",
 						"[30] EQUALS Pscar",
-						"[32] EQUALS Qscar",
+						"[32] EQUALS Qscar"
 					]
 				},
 				{
 					"function": "AND",
 					"rules": [
-						"ALL_FORWARD"
+						"ALL_FORWARD",
 						"NOT P1_QacR_a NEXTTO Bscar",
 						"NOT P1_QacR_b NEXTTO Bscar",
 						"NOT P1_QacR_a NEXTTO Lscar",

@@ -36,8 +36,8 @@
 			{
 				"name": "YFP_reporter",
 				"components": [
-					"#in2",
 					"#in1",
+					"#in2",
 					"YFP_cassette"
 				]
 			}

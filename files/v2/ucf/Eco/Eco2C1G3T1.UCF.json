@@ -9895,7 +9895,9 @@
 				{
 					"function": "AND",
 					"rules": [
-						"YFP_reporter AFTER L3",
+						"STARTSWITH L1",
+						"YFP_reporter_a AFTER L3",
+						"YFP_reporter_a BEFORE L3",
 						"ALL_FORWARD"
 					]
 				},

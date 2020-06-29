@@ -9896,6 +9896,7 @@
 					"function": "AND",
 					"rules": [
 						"STARTSWITH L1",
+						"L2 BEFORE L3",
 						"YFP_reporter_a AFTER L3",
 						"YFP_reporter_b BEFORE L3",
 						"ALL_FORWARD"

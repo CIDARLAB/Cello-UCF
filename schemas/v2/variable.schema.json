@@ -13,6 +13,16 @@
 			"description": "A reference to a numerical object.",
 			"type": "string",
 			"pattern": "^#/(/[A-Za-z0-9_]+)+$"
+		},
+		"on_threshold": {
+			"description": "A reference to a numerical object.",
+			"type": "string",
+			"pattern": "^#/(/[A-Za-z0-9_]+)+$"
+		},
+		"off_threshold": {
+			"description": "A reference to a numerical object.",
+			"type": "string",
+			"pattern": "^#/(/[A-Za-z0-9_]+)+$"
 		}
 	},
 	"required": [

@@ -13,7 +13,7 @@
 		"genome": "wildtype (NCBI RefSeq: NC_000913.3) with three landing pads integrated",
 		"media": "M9 minimal media composed of M9 media salts (6.78 g/L Na2HPO4, 3 g/L KH2PO4, 1 g/L NH4Cl, 0.5 g/L NaCl, 0.34 g/L thiamine hydrochloride, 0.4% D-glucose, 0.2% Casamino acids, 2 mM MgSO4, and 0.1 mM CaCl2; kanamycin (50 μg/ml), spectinomycin (50 μg/ml)",
 		"temperature": "37",
-		"growth": "Inoculation: Individual colonies into M9 media, 16 hours overnight in plate shaker.\tDilution: Next day, cells dilute ~200-fold into M9 media with antibiotics, growth for 3 hours.\tInduction: Cells diluted ~700-fold into M9 media with antibiotics.\tGrowth: shaking incubator for 5 hours.\tArrest protein production: PBS and 2 mg/ml kanamycin.  Measurement: flow cytometry, data processing for REU normalization."
+		"growth": "Inoculation: Individual colonies into M9 media, 16 hours overnight in plate shaker.\tDilution: Next day, cells dilute ~200-fold into M9 media with antibiotics, growth for 3 hours.\tInduction: Cells diluted ~700-fold into M9 media with antibiotics.\tGrowth: shaking incubator for 5 hours.\tArrest protein production: PBS and 2 mg/ml kanamycin.  Measurement: flow cytometry, data processing for RPU normalization."
 	},
 	{
 		"collection": "measurement_std",

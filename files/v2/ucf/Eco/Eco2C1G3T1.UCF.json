@@ -9674,7 +9674,7 @@
 			{
 				"name": "K",
 				"value": 0.15192,
-				"description": "Dissociation equilibrium constant"
+				"description": "Half-maximum"
 			},
 			{
 				"name": "n",
@@ -9706,7 +9706,7 @@
 			{
 				"name": "K",
 				"value": 0.970389,
-				"description": "Dissociation equilibrium constant"
+				"description": "Half-maximum"
 			},
 			{
 				"name": "n",
@@ -9738,7 +9738,7 @@
 			{
 				"name": "K",
 				"value": 0.147489,
-				"description": "Dissociation equilibrium constant"
+				"description": "Half-maximum"
 			},
 			{
 				"name": "n",
@@ -9770,7 +9770,7 @@
 			{
 				"name": "K",
 				"value": 0.39879,
-				"description": "Dissociation equilibrium constant"
+				"description": "Half-maximum"
 			},
 			{
 				"name": "n",
@@ -9802,7 +9802,7 @@
 			{
 				"name": "K",
 				"value": 0.127233,
-				"description": "Dissociation equilibrium constant"
+				"description": "Half-maximum"
 			},
 			{
 				"name": "n",
@@ -9834,7 +9834,7 @@
 			{
 				"name": "K",
 				"value": 1.250808,
-				"description": "Dissociation equilibrium constant"
+				"description": "Half-maximum"
 			},
 			{
 				"name": "n",

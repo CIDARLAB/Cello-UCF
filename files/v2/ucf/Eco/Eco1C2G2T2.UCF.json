@@ -4855,7 +4855,7 @@
 		"group": "LmrA",
 		"regulator": "LmrA",
 		"gate_type": "NOR",
-		"color": "6FCDE4",
+		"color": "F04D23",
 		"model": "N1_LmrA_model",
 		"structure": "N1_LmrA_structure"
 	},
@@ -4866,7 +4866,7 @@
 		"group": "BM3R1",
 		"regulator": "BM3R1",
 		"gate_type": "NOR",
-		"color": "6FCDE5",
+		"color": "EE2F2B",
 		"model": "B1_BM3R1_model",
 		"structure": "B1_BM3R1_structure"
 	},
@@ -4877,7 +4877,7 @@
 		"group": "BM3R1",
 		"regulator": "BM3R1",
 		"gate_type": "NOR",
-		"color": "6FCDE6",
+		"color": "EE2F2B",
 		"model": "B2_BM3R1_model",
 		"structure": "B2_BM3R1_structure"
 	},
@@ -4888,7 +4888,7 @@
 		"group": "PhlF",
 		"regulator": "PhlF",
 		"gate_type": "NOR",
-		"color": "6FCDE7",
+		"color": "F9A427",
 		"model": "P1_PhlF_model",
 		"structure": "P1_PhlF_structure"
 	},
@@ -4899,7 +4899,7 @@
 		"group": "PhlF",
 		"regulator": "PhlF",
 		"gate_type": "NOR",
-		"color": "6FCDE8",
+		"color": "F9A427",
 		"model": "P2_PhlF_model",
 		"structure": "P2_PhlF_structure"
 	},
@@ -4910,7 +4910,7 @@
 		"group": "SrpR",
 		"regulator": "SrpR",
 		"gate_type": "NOR",
-		"color": "6FCDE9",
+		"color": "006838",
 		"model": "S1_SrpR_model",
 		"structure": "S1_SrpR_structure"
 	},
@@ -4921,7 +4921,7 @@
 		"group": "SrpR",
 		"regulator": "SrpR",
 		"gate_type": "NOR",
-		"color": "6FCDE1",
+		"color": "006838",
 		"model": "S3_SrpR_model",
 		"structure": "S3_SrpR_structure"
 	},
@@ -4932,7 +4932,7 @@
 		"group": "SrpR",
 		"regulator": "SrpR",
 		"gate_type": "NOR",
-		"color": "6FCDE1",
+		"color": "006838",
 		"model": "S4_SrpR_model",
 		"structure": "S4_SrpR_structure"
 	},
@@ -4954,7 +4954,7 @@
 		"group": "SrpR",
 		"regulator": "CymR",
 		"gate_type": "NOR",
-		"color": "6FCDE1",
+		"color": "51430C",
 		"model": "C1_CymR_model",
 		"structure": "C1_CymR_structure"
 	},
@@ -4965,7 +4965,7 @@
 		"group": "VanR",
 		"regulator": "VanR",
 		"gate_type": "NOR",
-		"color": "6FCDE1",
+		"color": "E83C96",
 		"model": "V1_VanR_model",
 		"structure": "V1_VanR_structure"
 	},
@@ -5955,7 +5955,7 @@
 	{
 		"collection": "functions",
 		"name": "tandem_input_composition",
-		"equation": "t1 * x2 + x1",
+		"equation": "x1 + t1 * x2",
 		"variables": [
 			{
 				"name": "x1",
@@ -7292,6 +7292,13 @@
 		"rules": {
 			"function": "AND",
 			"rules": [
+				"STARTSWITH L1",
+				"L2 NEXTTO L1",
+				"CONTAINS L1",
+				"CONTAINS L2",
+				"CONTAINS L3",
+				"YFP_reporter NEXTTO L3",
+				"ENDSWITH YFP_reporter"
 				"V1_VanR BEFORE P1_PhlF",
 				"V1_VanR BEFORE P2_PhlF",
 				"V1_VanR BEFORE P3_PhlF",

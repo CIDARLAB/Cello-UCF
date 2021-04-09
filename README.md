@@ -2,6 +2,10 @@
 
 # Cello UCFs
 
+
+[![DOI](https://zenodo.org/badge/238040956.svg)](https://zenodo.org/badge/latestdoi/238040956)
+
+
 UCFs, input sensor files, and output device files are in `files/`.
 
 # UCF JSON Schemas
